@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/arrow_down.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/fragment_base.xml" value="0.2076923076923077" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/gradient_color_normal.xml" value="0.23897435897435898" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_add.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_all.xml" value="0.18425925925925926" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_back.xml" value="0.18425925925925926" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_finish.xml" value="0.18425925925925926" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_menu.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_nav_collect.xml" value="0.262037037037037" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_nav_home.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/ic_theme.xml" value="0.18425925925925926" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/icon.xml" value="0.24814814814814815" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/navigation_button_home.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/round_rec.xml" value="0.3" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/drawable/rounder_rec.xml" value="0.262037037037037" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout-w936dp/fragment_base.xml" value="0.1" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_about.xml" value="0.225" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_all_functions.xml" value="0.21818181061547676" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_base.xml" value="0.225" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_base_nav.xml" value="0.2265625" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_base_second.xml" value="0.29375" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_main.xml" value="0.18327272091700048" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_scrolling.xml" value="0.22291666666666668" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/activity_setting.xml" value="0.225" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/button_navigation.xml" value="0.28703703703703703" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/button_round_dot.xml" value="0.2879999900124293" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/button_round_rec.xml" value="0.29270833333333335" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_base.xml" value="0.19791666666666666" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_collect.xml" value="0.2879999900124293" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_collect_init.xml" value="0.21818181061547676" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_dashboard.xml" value="0.26510416666666664" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_home.xml" value="0.29375" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_item_list.xml" value="0.25052083333333336" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_more.xml" value="0.1390625" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_nav.xml" value="0.29375" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/fragment_view_pager2.xml" value="0.13963635879390512" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/header_drawer.xml" value="0.2265625" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/header_tool_bar.xml" value="0.23333333333333334" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/holder_func.xml" value="0.19199999334161955" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/holder_func_catalog.xml" value="0.2671300893743793" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/holder_func_select.xml" value="0.21818181061547676" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/navigation_button.xml" value="0.29375" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/layout/widget_flow.xml" value="0.2574074074074074" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/menu/activity_main_drawer.xml" value="0.30833333333333335" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/app/src/main/res/menu/menu_scrolling.xml" value="0.30833333333333335" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/ic_picture.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/ic_query.xml" value="0.18425925925925926" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/ic_selective.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/ic_word.xml" value="0.25416666666666665" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/unselective.xml" value="0.2916666666666667" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/activity_main.xml" value="0.22552083333333334" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/xml/function_list.xml" value="0.29375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3098958333333333" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/gradient_color_normal.xml" value="0.2359375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.3098958333333333" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3098958333333333" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3098958333333333" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/ic_menu.xml" value="0.24814814814814815" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3098958333333333" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/menu.xml" value="0.30885416666666665" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/navigation_buton_home.xml" value="0.30885416666666665" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable/navigation_button_home.xml" value="0.3098958333333333" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/activity_base.xml" value="0.29375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/activity_main.xml" value="0.18327272091700048" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/fragment_dashboard.xml" value="0.29375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/fragment_home.xml" value="0.29375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/fragment_nav.xml" value="0.29375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/fragment_notifications.xml" value="0.29375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/header_layout.xml" value="0.21979166666666666" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/layout/navigation_button.xml" value="0.2879999900124293" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/menu/acitvity_main_drawer.xml" value="0.234375" />
+        <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/menu/bottom_nav_menu.xml" value="0.26458333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

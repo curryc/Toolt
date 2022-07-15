@@ -1,0 +1,4 @@
+<resources>
+    <string name="handle_barrage">HandleBarrage</string>
+    <string name="image_cropping">ImageCropping</string>
+</resources>
