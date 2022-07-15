@@ -3,7 +3,7 @@
           package="com.curry.toolt">
 
     <application
-            android:name=".base.BaseApplication"
+            android:name="com.curry.toolt.base.BaseApplication"
             android:allowBackup="true"
             android:icon="@mipmap/toolt"
             android:label="@string/app_name"
@@ -14,7 +14,7 @@
                 android:name=".activity.SelectFuncActivity"
                 android:exported="true"/>
         <activity
-                android:name=".base.TopToolbarActivity"
+                android:name="com.curry.toolt.base.TopToolbarActivity"
                 android:exported="true"/>
         <activity
                 android:name=".activity.ThemeActivity"
@@ -33,7 +33,7 @@
                 android:exported="true"
                 android:parentActivityName=".activity.MainActivity"/>
         <activity
-                android:name=".base.BaseActivity"
+                android:name="com.curry.toolt.base.BaseActivity"
                 android:exported="true"/>
         <activity
                 android:name=".activity.MainActivity"

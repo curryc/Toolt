@@ -56,12 +56,15 @@ public class FunctionSelectProvider extends BaseViewProvider<Function> {
                 }
             }
         }, R.id.select_holder);
+
+
         holder.setText(R.id.select_title, data.getTitle());
         if (App.getDotColor(data.getLevel()) == -1) {
             holder.getViewById(R.id.select_dot).setVisibility(View.GONE);
         } else {
             holder.setSrc(R.id.select_dot, App.getDotColor(data.getLevel()));
         }
+
         if (data.isCollect()) {
             holder.setSrc(R.id.select_radio, R.drawable.selective);
         } else {

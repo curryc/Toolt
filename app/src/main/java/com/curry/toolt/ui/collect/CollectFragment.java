@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -80,7 +79,15 @@ public class CollectFragment extends BaseFragment implements View.OnClickListene
             mRecyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), 2));
 
             SingleTypeAdapter mAdapter = new SingleTypeAdapter();
-            mAdapter.register(Function.class, new FunctionProvider(this.getContext()));
+            FunctionProvider provider = new FunctionProvider(this.getContext());
+            provider.setLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    startActivity(new Intent(getContext(), SelectFuncActivity.class));
+                    return false;
+                }
+            });
+            mAdapter.register(Function.class, provider);
             mAdapter.addData(Collect.getCollects());
 
             mRecyclerView.setAdapter(mAdapter);

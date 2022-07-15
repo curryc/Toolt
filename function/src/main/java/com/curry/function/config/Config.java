@@ -2,6 +2,7 @@ package com.curry.function.config;
 
 import com.curry.function.R;
 import com.curry.function.bean.Function;
+import com.curry.function.device.sinaudio.SinAudio;
 import com.curry.function.normal.handleberrage.HandleBarrage;
 
 /**
@@ -33,8 +34,8 @@ public class Config {
     // 每个功能
     public final static Function[] functions = {
             new Function(R.string.handle_barrage, 0, 0, HandleBarrage.class),
-            new Function(R.string.handle_barrage, 1, 2, HandleBarrage.class),
-            new Function(R.string.image_cropping, 1, 1, HandleBarrage.class),
-            new Function(R.string.image_cropping, 2, 0, HandleBarrage.class)
+            new Function(R.string.sin_audio, 5, 1, SinAudio.class),
+            new Function(R.string.image_cropping, 3, 0, HandleBarrage.class),
+            new Function(R.string.ruler, 0, 1, HandleBarrage.class)
     };
 }

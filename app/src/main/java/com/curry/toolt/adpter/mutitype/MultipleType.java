@@ -11,7 +11,7 @@ import java.util.List;
  * @author: 陈博文
  * @create: 2022-07-03 17:06
  * @description: 完整的实现这个接口,用来绑定数据和一个provider,通过provider来展示这个数据
- * @see {@link com.curry.toolt.base.BaseViewProvider}
+ * @see {@link BaseViewProvider}
  **/
 public class MultipleType implements TypePool{
     private List<Class<?>> data;

@@ -41,6 +41,7 @@ public class Collect {
             }
             sCache.put(TAG, sb.toString());
         }
+        set();
     }
 
     /**
@@ -60,6 +61,7 @@ public class Collect {
             sb.append("\n");
         }
         sCache.put(TAG, sb.toString());
+        set();
     }
 
     /**
@@ -81,6 +83,7 @@ public class Collect {
             sb.append("\n");
         }
         sCache.put(TAG, sb.toString());
+        set();
     }
 
     /**
@@ -103,6 +106,7 @@ public class Collect {
             sb.append("\n");
         }
         sCache.put(TAG, sb.toString());
+        set();
     }
 
     /**
@@ -137,5 +141,13 @@ public class Collect {
             sCollectIds.add(next);
             sCollects.add(App.getFunctionById(next));
         }
+        set();
+    }
+
+    /**
+     * 设置动态的收藏
+     */
+    private static void set(){
+        App.setCollects(sCollectIds);
     }
 }

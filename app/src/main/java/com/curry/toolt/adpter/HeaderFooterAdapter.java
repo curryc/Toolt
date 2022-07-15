@@ -17,7 +17,7 @@ import java.util.List;
  * @author: 陈博文
  * @create: 2022-07-03 16:43
  * @description: 一个带有四个部分的Adapter, 这其中包含一个头部, 一个中部, 然后是需要大量展示的数据, 然后是尾部
- * @see {@link com.curry.toolt.base.BaseViewProvider}
+ * @see {@link BaseViewProvider}
  **/
 public class HeaderFooterAdapter extends RecyclerView.Adapter<RecyclerViewHolder> implements TypePool {
     private final String TAG = "homeAdapter";

@@ -51,6 +51,16 @@ public class App {
     }
 
     /**
+     * 设置一些功能为收藏
+     * @param collects
+     */
+    public static void setCollects(List<Integer> collects){
+        for (Function f : sFunctions) {
+            if(collects.contains(f.getId())) f.setCollect(true);
+        }
+    }
+
+    /**
      * 获取功能列表
      *
      * @return
