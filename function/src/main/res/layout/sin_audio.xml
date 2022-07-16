@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hz"
+                android:max="10000"></SeekBar>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/hint"
+                  android:layout_below="@id/hz"
+                  android:layout_centerInParent="true"
+                  android:textAppearance="@style/AnnotationTextAppearance"
+                  android:text="频率"></TextView>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/bottom_padding">
+        <ImageView
+                android:layout_width="@dimen/mid_button"
+                android:layout_height="@dimen/mid_button"
+                android:src="@drawable/ic_smaller"
+                android:layout_marginEnd="@dimen/horizontal_margin_mid"
+                android:layout_centerVertical="true"
+                android:id="@+id/pre"></ImageView>
+        <ImageView
+                android:layout_width="@dimen/main_button"
+                android:layout_height="@dimen/main_button"
+                android:src="@drawable/ic_play"
+                android:layout_toRightOf="@id/pre"
+                android:id="@+id/play"></ImageView>
+        <ImageView
+                android:layout_width="@dimen/mid_button"
+                android:layout_height="@dimen/mid_button"
+                android:src="@drawable/ic_bigger"
+                android:layout_marginStart="@dimen/horizontal_margin_mid"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/play"
+                android:id="@+id/next"></ImageView>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

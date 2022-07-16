@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="main_button">64dp</dimen>
+    <dimen name="mid_button">40dp</dimen>
+
+    <dimen name="bottom_padding">128dp</dimen>
+
+    <dimen name="horizontal_margin_mid">25dp</dimen>
+</resources>
