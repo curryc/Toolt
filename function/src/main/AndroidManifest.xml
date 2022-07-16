@@ -4,8 +4,16 @@
 
     <application>
         <activity
+                android:name=".base.BaseActivity"
+                android:theme="@style/BackAppTheme"
+                android:exported="true"/>
+        <activity
                 android:name=".normal.handleberrage.HandleBarrage"
                 android:exported="true"/>
+        <activity android:name=".device.sinaudio.SinAudio"
+                  android:theme="@style/BackAppTheme"
+                  android:label="SinAudio"
+                  android:exported="true"/>
     </application>
 
 </manifest>

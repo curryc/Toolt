@@ -10,7 +10,7 @@ public abstract class TopToolbarActivity extends BaseActivity {
 
     @Override
     protected final int getLayoutId() {
-        return R.layout.activity_all_functions;
+        return R.layout.activity_top_toolbar;
     }
 
     @Override
