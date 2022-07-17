@@ -18,20 +18,16 @@
                 android:exported="true"/>
         <activity
                 android:name=".activity.ThemeActivity"
-                android:exported="true"
-                android:parentActivityName=".activity.MainActivity"/>
+                android:exported="true"/>
         <activity
                 android:name=".activity.AllFunctionsActivity"
-                android:exported="true"
-                android:parentActivityName=".activity.MainActivity"/>
+                android:exported="true"/>
         <activity
                 android:name=".activity.AboutActivity"
-                android:exported="true"
-                android:parentActivityName=".activity.MainActivity"/>
+                android:exported="true"/>
         <activity
                 android:name=".activity.SettingActivity"
-                android:exported="true"
-                android:parentActivityName=".activity.MainActivity"/>
+                android:exported="true"/>
         <activity
                 android:name="com.curry.toolt.base.BaseActivity"
                 android:exported="true"/>

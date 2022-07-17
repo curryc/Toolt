@@ -8,12 +8,12 @@
         tools:context=".activity.AllFunctionsActivity">
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/app_bar">
         <androidx.appcompat.widget.Toolbar
                 android:id="@+id/title_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:actionBarSize"
-                app:navigationIcon="@drawable/ic_back"
                 app:layout_scrollFlags="scroll"
                 app:title="hello"
                 app:titleTextAppearance="@style/BigTextAppearance"/>

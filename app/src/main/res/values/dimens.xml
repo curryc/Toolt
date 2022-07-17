@@ -25,6 +25,9 @@
     <dimen name="round_rec_radius">3dp</dimen>
     <dimen name="round_dot_list_item_dot">10dp</dimen>
 
+    <dimen name="function_margin">10dp</dimen>
+    <dimen name="function_rec_radius">9dp</dimen>
+
     <dimen name="collect_icon_size">200dp</dimen>
     <dimen name="collect_add">33dp</dimen>
 

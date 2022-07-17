@@ -1,6 +1,5 @@
 package com.curry.toolt.base;
 
-import android.view.View;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.Toolbar;
 import com.curry.toolt.R;
@@ -16,12 +15,8 @@ public abstract class TopToolbarActivity extends BaseActivity {
     @Override
     protected final void initView() {
         mToolbar = findViewById(R.id.title_toolbar);
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initToolbar(mToolbar);
         initContainer(findViewById(R.id.content_container));
     }
