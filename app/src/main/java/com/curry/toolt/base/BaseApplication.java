@@ -1,6 +1,7 @@
 package com.curry.toolt.base;
 
 import android.app.Application;
+import android.content.res.Resources;
 import com.curry.function.App;
 import com.curry.function.Collect;
 
@@ -16,5 +17,9 @@ public class BaseApplication extends Application {
         super.onCreate();
         App.init(this);
         Collect.init();
+        initTheme();
+    }
+
+    private void initTheme(){
     }
 }

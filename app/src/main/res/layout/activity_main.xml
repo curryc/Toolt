@@ -12,17 +12,18 @@
         <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_bar_height"
-                android:id="@+id/main_scroll"
                 android:fitsSystemWindows="true"
+                android:id="@+id/main_scroll"
                 android:background="@color/white">
             <com.google.android.material.appbar.CollapsingToolbarLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/app_bar_height"
+                    android:fitsSystemWindows="true"
+                    android:background="@drawable/header_toolbar"
                     android:id="@+id/toolbar_layout"
-                    style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                    style="@style/ToolBarTheme"
                     app:toolbarId="@+id/title_toolbar"
-                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed"
-                    app:contentScrim="?attr/colorPrimary">
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
                 <androidx.appcompat.widget.Toolbar
                         android:id="@+id/title_toolbar"
                         android:layout_width="match_parent"
@@ -30,12 +31,8 @@
                         app:layout_collapseMode="pin"
                         app:navigationIcon="@drawable/ic_menu"
                         app:title="hello"
+                        app:titleTextColor="@color/colorPrimary"
                         app:titleTextAppearance="@style/BigTextAppearance"/>
-                <include android:layout_height="wrap_content"
-                         android:layout_width="wrap_content"
-                         android:layout_gravity="center|bottom"
-                         layout="@layout/header_tool_bar"
-                         app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"></include>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -67,6 +64,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:itemTextAppearance="@style/NavItemTextAppearance"
+            app:itemIconTint="@color/colorPrimary"
             app:headerLayout="@layout/header_drawer"
             app:menu="@menu/activity_main_drawer"/>
 

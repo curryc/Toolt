@@ -17,13 +17,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/hz"
                 android:max="10000"></SeekBar>
-        <TextView android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:id="@+id/hint"
-                  android:layout_below="@id/hz"
-                  android:layout_centerInParent="true"
-                  android:textAppearance="@style/AnnotationTextAppearance"
-                  android:text="频率"></TextView>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hint"
+                android:layout_below="@id/hz"
+                android:layout_centerInParent="true"
+                android:textAppearance="@style/AnnotationTextAppearance"
+                android:text="@string/sin_audio_hint"></TextView>
     </RelativeLayout>
 
 

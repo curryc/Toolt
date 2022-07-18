@@ -3,6 +3,8 @@ package com.curry.toolt.widget;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.res.Resources;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import com.curry.function.App;
 import com.curry.toolt.R;
 import org.jetbrains.annotations.NotNull;
 
@@ -96,8 +99,16 @@ public class NavigationButton extends FrameLayout {
         mTitle.setSelected(selected);
         if (selected) {
             scaleAnimator(mRootView, 1f, 1.2f);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                mIcon.setColorFilter(App.getContext().getColor(R.color.colorPrimary));
+                mTitle.setTextColor(App.getContext().getColor(R.color.colorPrimary));
+            }
         } else {
             scaleAnimator(mRootView, 1.2f, 1f);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                mIcon.setColorFilter(App.getContext().getColor(R.color.black));
+                mTitle.setTextColor(App.getContext().getColor(R.color.black));
+            }
         }
     }
 

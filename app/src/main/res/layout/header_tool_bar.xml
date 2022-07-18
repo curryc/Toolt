@@ -3,9 +3,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ImageView android:layout_width="@dimen/header_icon"
-               android:layout_height="@dimen/header_icon"
+    <ImageView android:layout_width="match_parent"
+               android:layout_height="wrap_content"
                android:layout_gravity="center"
-               android:src="@drawable/toolt"></ImageView>
+               android:src="@mipmap/header_backgroud"></ImageView>
 
 </FrameLayout>

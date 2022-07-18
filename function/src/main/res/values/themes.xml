@@ -7,18 +7,18 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
     </style>
 
-    <style name="BackAppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+    <style name="BackAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--ToolBar区域背景颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!--状态栏区域背景颜色-->
-        <item name="colorPrimaryDark">@color/transparent</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <!--控制各个控件被选中时的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
 
         <!--状态栏-->
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:statusBarColor">@color/white</item>
 
         <!--页面背景色-->
         <item name="android:windowBackground">@color/white</item>
@@ -28,7 +28,7 @@
         <!--api 21 可用 各个控制控件的默认颜色-->
         <item name="android:colorControlNormal">@color/white</item>
         <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
-        <item name="android:windowActionBar">false</item>
+        <item name="android:windowActionBar">true</item>
     </style>
 
     <style name="WindowTitleAppearance" parent="TextAppearance.AppCompat.Large">

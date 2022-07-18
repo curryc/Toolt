@@ -50,7 +50,7 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
 
     @Override
     protected String getWindowTitle() {
-        return "SinAudio";
+        return getString(R.string.sin_audio);
     }
 
     @Override
@@ -114,7 +114,7 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        mHint.setText("频率(hz):\t" + progress);
+        mHint.setText(getString(R.string.sin_audio_hint_head) + progress);
     }
 
     @Override

@@ -1,10 +1,11 @@
 package com.curry.toolt.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
@@ -33,6 +34,16 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
+
+    private int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
+
     /**
      * 初始化控件
      */
@@ -42,6 +53,7 @@ public class MainActivity extends BaseActivity {
         mDrawer = findViewById(R.id.drawer);
 
         mViewPager = findViewById(R.id.view_pager);
+        mViewPager.setMinimumHeight(mViewPager.getHeight() + getStatusBarHeight());
         mViewPager.setAdapter(new FragmentAdapter(getSupportFragmentManager(), getLifecycle(), getPagers()));
         mViewPager.setCurrentItem(1, false);
         mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -144,6 +156,12 @@ public class MainActivity extends BaseActivity {
 //                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 //                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
 //                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+//        }
+//        if (Build.VERSION.SDK_INT>Build.VERSION_CODES.LOLLIPOP){
+//            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+//                    |View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+//            );
+//            getWindow().setStatusBarColor(Color.TRANSPARENT);
 //        }
     }
 
