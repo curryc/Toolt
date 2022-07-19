@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.res.Resources;
 import com.curry.function.App;
 import com.curry.function.Collect;
+import com.curry.toolt.R;
 
 /**
  * @program: Toolt
@@ -15,6 +16,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+//        setTheme(R.style.AppTheme_Blue);
         App.init(this);
         Collect.init();
         initTheme();

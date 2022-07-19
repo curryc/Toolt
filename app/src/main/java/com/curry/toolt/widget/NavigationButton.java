@@ -100,8 +100,8 @@ public class NavigationButton extends FrameLayout {
         if (selected) {
             scaleAnimator(mRootView, 1f, 1.2f);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                mIcon.setColorFilter(App.getContext().getColor(R.color.colorPrimary));
-                mTitle.setTextColor(App.getContext().getColor(R.color.colorPrimary));
+                mIcon.setColorFilter(App.getThemeColor("colorPrimary"));
+                mTitle.setTextColor(App.getThemeColor("colorPrimary"));
             }
         } else {
             scaleAnimator(mRootView, 1.2f, 1f);

@@ -2,13 +2,21 @@ package com.curry.toolt.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.*;
+import android.widget.LinearLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
+import com.curry.function.App;
 import com.curry.toolt.R;
 import com.curry.toolt.adpter.FragmentAdapter;
 import com.curry.toolt.base.BaseActivity;
@@ -16,6 +24,8 @@ import com.curry.toolt.ui.NavFragment;
 import com.curry.toolt.ui.collect.CollectFragment;
 import com.curry.toolt.ui.home.HomeFragment;
 import com.curry.toolt.ui.more.MoreFragment;
+import com.curry.util.log.Logger;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -28,6 +38,7 @@ public class MainActivity extends BaseActivity {
     private ViewPager2 mViewPager;
     private Toolbar mToolBar;
     private DrawerLayout mDrawer;
+    private NavigationView mNavigationView;
 
     @Override
     protected int getLayoutId() {
@@ -51,6 +62,11 @@ public class MainActivity extends BaseActivity {
     protected void initView() {
         mNavBar = new NavFragment();
         mDrawer = findViewById(R.id.drawer);
+        mNavigationView = findViewById(R.id.drawer_nav);
+
+        initWindow();
+        initMenu(mNavigationView.getMenu());
+
 
         mViewPager = findViewById(R.id.view_pager);
         mViewPager.setMinimumHeight(mViewPager.getHeight() + getStatusBarHeight());
@@ -90,17 +106,14 @@ public class MainActivity extends BaseActivity {
                 mDrawer.open();
             }
         });
-
-        initMenu(((NavigationView) findViewById(R.id.drawer_nav)).getMenu());
-
-        initWindow();
     }
 
     /**
      * 初始化Menu
+     *
      * @param menu 菜单
      */
-    private void initMenu(Menu menu){
+    private void initMenu(Menu menu) {
         menu.findItem(R.id.drawer_all).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -163,6 +176,26 @@ public class MainActivity extends BaseActivity {
 //            );
 //            getWindow().setStatusBarColor(Color.TRANSPARENT);
 //        }
+
+        int[][] states = new int[][]{new int[]{}};
+        int[] tints = new int[]{App.getThemeColor("colorPrimary")};
+        ColorStateList colorStateList = new ColorStateList(states, tints);
+        mNavigationView.setItemIconTintList(colorStateList);
+        Logger.v(mNavigationView.getItemIconTintList().toString());
+
+
+        CollapsingToolbarLayout toolbarLayout = findViewById(R.id.toolbar_layout);
+
+        int[] colors = {App.getThemeColor("colorPrimary"),
+                App.getThemeColor("colorPrimaryDark")};
+        GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
+        background.setGradientType(GradientDrawable.RECTANGLE);
+        toolbarLayout.setBackground(background);
+        toolbarLayout.setContentScrimColor(colors[1]);
+
+        GradientDrawable navBackground = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, colors);
+        navBackground.setGradientType(GradientDrawable.RECTANGLE);
+        mNavigationView.getHeaderView(0).setBackground(navBackground);
     }
 
     /**

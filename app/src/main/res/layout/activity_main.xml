@@ -31,7 +31,6 @@
                         app:layout_collapseMode="pin"
                         app:navigationIcon="@drawable/ic_menu"
                         app:title="hello"
-                        app:titleTextColor="@color/colorPrimary"
                         app:titleTextAppearance="@style/BigTextAppearance"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>

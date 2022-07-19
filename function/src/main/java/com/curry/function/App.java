@@ -2,13 +2,12 @@ package com.curry.function;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.TypedValue;
 import com.curry.function.bean.Function;
 import com.curry.function.bean.FunctionCatalog;
 import com.curry.function.config.Config;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: Toolt
@@ -22,10 +21,13 @@ public class App {
     private static Context sContext;
     private static List<FunctionCatalog> sCatalogs;
     private static List<Function> sFunctions;
+    private static Map<String, Integer> sColors;
 
     public static void init(Application application) {
         App.sContext = application;
+        sColors = new HashMap<>();
         obtainFunctions();
+        obtainTheme();
     }
 
     /**
@@ -106,6 +108,15 @@ public class App {
     }
 
     /**
+     * 获取主题颜色
+     * @param colorName
+     * @return
+     */
+    public static int getThemeColor(String colorName){
+        return sColors.get(colorName);
+    }
+
+    /**
      * 检查当前App是否有效
      *
      * @return
@@ -142,6 +153,24 @@ public class App {
             catalog.addFunction(function);
             sCatalogs.add(catalog);
         }
+    }
+
+    /**
+     * 获取当前主题的Theme信息
+     */
+    private static void obtainTheme(){
+        TypedValue typedValue = new TypedValue();
+        sContext.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
+        int color = typedValue.data;
+        sColors.put("colorPrimary", color);
+
+        sContext.getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
+        color = typedValue.data;
+        sColors.put("colorPrimaryDark", color);
+
+        sContext.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
+        color = typedValue.data;
+        sColors.put("colorAccent", color);
     }
 
 }

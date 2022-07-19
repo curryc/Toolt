@@ -2,7 +2,12 @@ package com.curry.toolt.widget;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -58,6 +63,12 @@ public class RoundDotButton extends FrameLayout {
 
         mTitle = findViewById(R.id.button_round_dot_title);
         mDot = findViewById(R.id.button_round_dot_dot);
+
+        FrameLayout button = mRootView.findViewById(R.id.button_round_dot);
+        GradientDrawable background = new GradientDrawable();
+        background.setTint(App.getThemeColor("colorPrimary"));
+        background.setCornerRadius(getResources().getDimensionPixelOffset(R.dimen.round_dot_button_radius));
+        button.setBackground(background);
     }
 
     /**
