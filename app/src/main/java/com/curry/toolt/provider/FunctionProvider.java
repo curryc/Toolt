@@ -60,7 +60,7 @@ public class FunctionProvider extends BaseViewProvider<Function> {
         } else {
             holder.setOnClickListener(mOnClickListener, holder.getRootView());
         }
-        holder.getRootView().setBackground(background);
+//        holder.getRootView().setBackground(background);
         holder.getRootView().setOnLongClickListener(mLongClickListener);
     }
 
