@@ -3,6 +3,7 @@ package com.curry.toolt.provider;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
@@ -28,11 +29,17 @@ public class FunctionCatalogProvider extends BaseViewProvider<FunctionCatalog> {
     private SparseArray<FrameLayout> mHintContainers;
     private SparseArray<ImageView> mRights;
 
+    private GradientDrawable mHintBackground;
+
     public FunctionCatalogProvider(Context mContext) {
         super(mContext, R.layout.holder_func_catalog);
         mFlows = new SparseArray<>();
         mHintContainers = new SparseArray<>();
         mRights = new SparseArray<>();
+
+        mHintBackground = new GradientDrawable();
+        mHintBackground.setTint(App.getThemeColor("colorPrimary"));
+        mHintBackground.setCornerRadius(mContext.getResources().getDimensionPixelSize(R.dimen.round_rec_radius));
     }
 
     @SuppressLint("Range")
@@ -49,7 +56,7 @@ public class FunctionCatalogProvider extends BaseViewProvider<FunctionCatalog> {
 
         // 初始化
         mHintContainer.setAlpha(0);
-
+        mHintContainer.setBackground(mHintBackground);
 
         mFlows.put(holder.hashCode(), mFlow);
         mHintContainers.put(holder.hashCode(), mHintContainer);

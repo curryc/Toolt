@@ -15,9 +15,9 @@
     <string name="slogan">hello toolt</string>
     <string name="tip_double_click_exit">click twice to finish</string>
 
-    <string name="title_activity_scrolling">ScrollingActivity</string>
-
     <string name="collect_zero">ZERO</string>
 
     <string name="select">SELECT</string>
+
+    <string name="save">SAVE</string>
 </resources>

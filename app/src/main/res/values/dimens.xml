@@ -33,4 +33,7 @@
     <dimen name="collect_add">33dp</dimen>
 
     <dimen name="select_radio">30dp</dimen>
+
+    <dimen name="theme_hint_width">20dp</dimen>
+    <dimen name="theme_edit_width">200dp</dimen>
 </resources>

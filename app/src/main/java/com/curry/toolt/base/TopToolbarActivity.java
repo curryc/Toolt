@@ -2,6 +2,7 @@ package com.curry.toolt.base;
 
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.Toolbar;
+import com.curry.function.App;
 import com.curry.toolt.R;
 
 public abstract class TopToolbarActivity extends BaseActivity {
@@ -17,6 +18,7 @@ public abstract class TopToolbarActivity extends BaseActivity {
         mToolbar = findViewById(R.id.title_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        mToolbar.setBackgroundColor(App.getThemeColor("colorPrimary"));
         initToolbar(mToolbar);
         initContainer(findViewById(R.id.content_container));
     }

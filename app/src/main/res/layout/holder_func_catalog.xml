@@ -30,7 +30,7 @@
                   android:layout_marginStart="@dimen/activity_horizontal_margin_sml"></TextView>
         <FrameLayout android:layout_width="wrap_content"
                      android:layout_height="wrap_content"
-                     android:background="@drawable/round_rec"
+                     android:background="@drawable/rounder_rec"
                      android:id="@+id/catalog_hint_container"
                      app:layout_constraintTop_toTopOf="parent"
                      app:layout_constraintStart_toEndOf="@+id/catalog_title"

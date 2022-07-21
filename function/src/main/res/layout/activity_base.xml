@@ -6,6 +6,8 @@
         android:layout_height="match_parent"
         android:id="@+id/container"
         tools:context="com.curry.function.base.BaseActivity">
-
-
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/title_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"/>
 </FrameLayout>

@@ -2,16 +2,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--ToolBar区域背景颜色-->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/white</item>
         <!--状态栏区域背景颜色-->
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <!--控制各个控件被选中时的颜色-->
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/white</item>
         <!--状态栏-->
         <!--        <item name="android:windowTranslucentStatus">true</item>-->
         <!--        <item name="android:windowDrawsSystemBarBackgrounds">true</item>-->
         <!--        <item name="android:statusBarColor">@color/transparent</item>-->
-
         <!--页面背景色-->
         <item name="android:windowBackground">@color/white</item>
         <!--api 21 可用 底部导航栏颜色-->
@@ -108,13 +107,28 @@
         <item name="overlapAnchor">true</item>  <!--把该属性改为false即可使menu位置位于toolbar之下-->
     </style>
 
+    <!--edit的样式-->
+    <style name="AppNumberEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textAlignment">center</item>
+        <item name="singleLine">true</item>
+        <item name="android:numeric">integer</item>
+        <item name="hintTextAppearance">@style/NormalTextAppearance</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <!--Button的样式-->
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:textAppearance">@style/BigTextAppearance</item>
+        <item name="colorAccent">@color/white</item>
+    </style>
+
     <!--文字样式-->
     <style name="NormalTextAppearance" parent="TextAppearance.AppCompat.Medium">
         <item name="android:textSize">10sp</item>
     </style>
 
     <style name="BigTextAppearance" parent="NormalTextAppearance">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">19sp</item>
     </style>
 
     <style name="MiddleTextAppearance" parent="NormalTextAppearance">

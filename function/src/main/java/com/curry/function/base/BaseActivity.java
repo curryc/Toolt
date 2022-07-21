@@ -3,6 +3,7 @@ package com.curry.function.base;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -14,8 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import com.curry.function.App;
 import com.curry.function.R;
 
 import java.io.Serializable;
@@ -31,10 +34,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(getLayoutId());
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
+            int[] colors = {App.getThemeColor("colorPrimary"), App.getThemeColor("colorPrimaryDark")};
+            GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
+            background.setGradientType(GradientDrawable.RECTANGLE);
+            actionBar.setBackgroundDrawable(background);
             actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
             actionBar.setCustomView(R.layout.header_action_bar);//设置标题样式
             TextView textView = (TextView) actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
@@ -58,6 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 在一个特定位置添加一个fragment
+     *
      * @param containerId
      * @param fragment
      */
@@ -102,6 +110,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 长时间Toast
+     *
      * @param text
      */
     public void toastLong(String text) {
@@ -110,6 +119,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 短时间Toast
+     *
      * @param text
      */
     public void toastShort(String text) {
@@ -125,6 +135,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 向Activity中添加回退动作
+     *
      * @param l
      */
     public void addOnTurnBackListener(TurnBackListener l) {
@@ -145,6 +156,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 获取当前Activity的layout
+     *
      * @return
      */
     protected abstract int getLayoutId();
@@ -157,9 +169,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 获取当前窗口的标题
+     *
      * @return
      */
-    protected  abstract String getWindowTitle();
+    protected abstract String getWindowTitle();
 
     /**
      * 初始化视图

@@ -30,18 +30,20 @@ public class FunctionProvider extends BaseViewProvider<Function> {
      */
     public FunctionProvider(Context mContext) {
         super(mContext, R.layout.holder_func);
+
+        background = new GradientDrawable();
+        background.setTint(App.getThemeColor("colorPrimary"));
+        background.setCornerRadius(mContext.getResources().getDimensionPixelSize(R.dimen.function_rec_radius));
     }
 
     public FunctionProvider(Context mContext, View.OnLongClickListener longClickListener) {
         this(mContext);
         this.mLongClickListener = longClickListener;
-        background  = new GradientDrawable();
-        background.setColor(App.getThemeColor("colorPrimary"));
-        background.setCornerRadius(App.getContext().getResources().getDimensionPixelOffset(R.dimen.function_rec_radius));
     }
 
     @Override
     public void bindView(RecyclerViewHolder holder, Function data) {
+        holder.getViewById(R.id.holder_fuc_button).setBackground(background);
         holder.setText(R.id.func_title, data.getTitle());
         if (App.getDotColor(data.getLevel()) == -1) {
             holder.getViewById(R.id.func_dot).setVisibility(View.GONE);
@@ -60,7 +62,6 @@ public class FunctionProvider extends BaseViewProvider<Function> {
         } else {
             holder.setOnClickListener(mOnClickListener, holder.getRootView());
         }
-//        holder.getRootView().setBackground(background);
         holder.getRootView().setOnLongClickListener(mLongClickListener);
     }
 
