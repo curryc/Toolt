@@ -7,8 +7,10 @@
     <color name="black">#ff000000</color>
     <color name="gray">#ff888888</color>
 
+    <color name="light_gray">#CFCFCF</color>
+
     <color name="red">#ffff0000</color>
-    <color name="light_red">#EC6A6A</color>
+    <color name="light_red">#FF6A6A</color>
 
     <color name="yellow">#ffffff00</color>
     <color name="light_yellow">#F3F3C5</color>

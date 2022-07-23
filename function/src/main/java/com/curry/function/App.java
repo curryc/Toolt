@@ -2,10 +2,12 @@ package com.curry.function;
 
 import android.app.Application;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.TypedValue;
 import com.curry.function.bean.Function;
 import com.curry.function.bean.FunctionCatalog;
 import com.curry.function.config.Config;
+import com.curry.util.cache.SharedPreferencesHelper;
 
 import java.util.*;
 
@@ -159,18 +161,28 @@ public class App {
      * 获取当前主题的Theme信息
      */
     private static void obtainTheme(){
-        TypedValue typedValue = new TypedValue();
-        sContext.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
-        int color = typedValue.data;
+//        TypedValue typedValue = new TypedValue();
+//        sContext.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true);
+//        int color = typedValue.data;
+//        sColors.put("colorPrimary", color);
+//
+//        sContext.getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
+//        color = typedValue.data;
+//        sColors.put("colorPrimaryDark", color);
+//
+//        sContext.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
+//        color = typedValue.data;
+//        sColors.put("colorAccent", color);
+        int color = (int)SharedPreferencesHelper.get(sContext, "colorPrimary" ,0);
         sColors.put("colorPrimary", color);
-
-        sContext.getTheme().resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
-        color = typedValue.data;
-        sColors.put("colorPrimaryDark", color);
-
-        sContext.getTheme().resolveAttribute(R.attr.colorAccent, typedValue, true);
-        color = typedValue.data;
-        sColors.put("colorAccent", color);
+        int r,g,b;
+        r = Color.red(color);
+        g = Color.green(color);
+        b = Color.blue(color);
+        r = r + 50 > 255 ? 255 : r + 50;
+        g = g + 50 > 255 ? 255 : g + 50;
+        b = b + 50 > 255 ? 255 : b + 50;
+        sColors.put("colorPrimaryDark", Color.argb(0,r,g,b));
     }
 
 }

@@ -58,6 +58,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
+                onFinish();
                 finish();
         }
         return false;
@@ -178,4 +179,9 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 初始化视图
      */
     protected abstract void initView();
+
+    /**
+     * 结束当前活动需要调用的方法
+     */
+    protected void onFinish(){}
 }

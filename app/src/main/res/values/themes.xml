@@ -128,7 +128,7 @@
     </style>
 
     <style name="BigTextAppearance" parent="NormalTextAppearance">
-        <item name="android:textSize">19sp</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="MiddleTextAppearance" parent="NormalTextAppearance">

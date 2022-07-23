@@ -1,11 +1,13 @@
 package com.curry.function.device.sinaudio;
 
+import android.graphics.drawable.GradientDrawable;
 import android.media.*;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.RequiresPermission;
+import com.curry.function.App;
 import com.curry.function.R;
 import com.curry.function.base.BaseActivity;
 import com.curry.util.log.Logger;
@@ -68,6 +70,14 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
 
         mSeekBar.setOnSeekBarChangeListener(this);
 
+        int[] colors = new int[]{
+                App.getThemeColor("colorPrimary"),
+                App.getThemeColor("colorPrimaryDark")
+        } ;
+        GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, colors);
+        background.setCornerRadius(getResources().getDimensionPixelSize(R.dimen.round_radius));
+        mSeekBar.setProgressDrawable(background);
+
         mAudio = new AudioTrack(
                 new AudioAttributes.Builder()
                         .setUsage(AudioAttributes.USAGE_MEDIA)
@@ -99,9 +109,9 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
                 mAudio.play();
                 mPlay.setImageResource(R.drawable.ic_pause);
             } else if (status == Status.Playing) {
+                mAudio.stop();
                 status = Status.Pause;
                 endTimer();
-                mAudio.stop();
                 mPlay.setImageResource(R.drawable.ic_play);
             }
         } else if (v.getId() == R.id.next) {
@@ -122,6 +132,8 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
         if (status == Status.Playing) {
             status = Status.Pause;
             mAudio.stop();
+            endTimer();
+            mPlay.setImageResource(R.drawable.ic_play);
         }
     }
 
@@ -134,6 +146,13 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
         Logger.v(TAG, "write successfully");
     }
 
+    /**
+     * 得到正弦波
+     * @param wave
+     * @param frequency_hz
+     * @param length
+     * @return
+     */
     private byte[] sin(byte[] wave, int frequency_hz, int length) {
         for (int i = 0; i < length; i++) {
             wave[i] = (byte) (HEIGHT * (1 - Math.sin(2 * Math.PI * i / (SAMPLE_RATE / frequency_hz))));
@@ -141,15 +160,28 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
         return wave;
     }
 
+    /**
+     * 开始计时
+     */
     private void startTimer() {
         es = Executors.newSingleThreadExecutor();
         es.execute(new Timer());
     }
 
+    /**
+     * 停止计时
+     */
     private void endTimer() {
         if (es != null) {
             es.shutdownNow();
         }
+    }
+
+    @Override
+    protected void onFinish() {
+        super.onFinish();
+        mAudio.stop();
+        endTimer();
     }
 
     private class Timer implements Runnable {
