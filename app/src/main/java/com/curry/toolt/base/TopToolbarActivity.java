@@ -18,7 +18,7 @@ public abstract class TopToolbarActivity extends BaseActivity {
         mToolbar = findViewById(R.id.title_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbar.setBackgroundColor(App.getThemeColor("colorPrimary"));
+        mToolbar.setBackgroundColor(App.getThemeColor());
         initToolbar(mToolbar);
         initContainer(findViewById(R.id.content_container));
     }

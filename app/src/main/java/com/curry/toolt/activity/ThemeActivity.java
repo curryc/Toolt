@@ -36,7 +36,7 @@ public class ThemeActivity extends TopToolbarActivity implements View.OnClickLis
         View root = getLayoutInflater().inflate(R.layout.activity_theme, container, false);
         container.addView(root);
 
-        mInitColor = App.getThemeColor("colorPrimary");
+        mInitColor = App.getThemeColor();
 
 //        mColorCircle = findViewById(R.id.color_circle);
         mRed = findViewById(R.id.red);
@@ -44,7 +44,7 @@ public class ThemeActivity extends TopToolbarActivity implements View.OnClickLis
         mBlue = findViewById(R.id.blue);
         mSave = findViewById(R.id.save);
 
-        mSave.setBackgroundColor(App.getThemeColor("colorPrimary"));
+        mSave.setBackgroundColor(App.getThemeColor());
         mRed.setText(String.valueOf(Color.red(mInitColor)));
         mGreen.setText(String.valueOf(Color.green(mInitColor)));
         mBlue.setText(String.valueOf(Color.blue(mInitColor)));

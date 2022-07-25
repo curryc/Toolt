@@ -46,6 +46,25 @@
             android:progress="15"
             android:id="@+id/speed"
             android:layout_marginTop="@dimen/vertical_margin_sml"></SeekBar>
+    <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/vertical_margin_sml"
+            android:id="@+id/mode">
+        <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/scroll_mode"
+                android:text="@string/handle_barrage_scroll"
+                android:layout_weight="1"></RadioButton>
+        <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin_sml"
+                android:text="@string/handle_barrage_static"
+                android:layout_weight="1"></RadioButton>
+    </RadioGroup>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,13 +73,14 @@
         <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/light_gray"
+                android:background="@color/gray"
                 android:id="@+id/text_color"
                 android:text="@string/handle_barrage_text_color"
                 android:layout_weight="1"></Button>
         <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/vertical_margin_sml"
                 android:background="@color/light_gray"
                 android:id="@+id/back_color"
                 android:text="@string/handle_barrage_back_color"
@@ -69,7 +89,6 @@
     <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/light_gray"
             android:id="@+id/show"
             android:text="@string/handle_barrage_show"
             android:layout_marginTop="@dimen/horizontal_margin_mid"></Button>

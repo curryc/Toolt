@@ -10,6 +10,8 @@
 
         <activity
                 android:name=".normal.handleberrage.HandleBarrage"
+                android:theme="@style/BackAppTheme"
+                android:label="HandleBarrage"
                 android:exported="true"/>
         <activity android:name=".normal.handleberrage.ShowActivity"
                   android:exported="true"

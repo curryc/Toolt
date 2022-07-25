@@ -119,6 +119,14 @@ public class App {
     }
 
     /**
+     * 获取主题颜色
+     * @return
+     */
+    public static int getThemeColor(){
+        return getThemeColor("colorPrimary");
+    }
+
+    /**
      * 检查当前App是否有效
      *
      * @return
@@ -179,10 +187,10 @@ public class App {
         r = Color.red(color);
         g = Color.green(color);
         b = Color.blue(color);
-        r = r + 50 > 255 ? 255 : r + 50;
-        g = g + 50 > 255 ? 255 : g + 50;
-        b = b + 50 > 255 ? 255 : b + 50;
-        sColors.put("colorPrimaryDark", Color.argb(0,r,g,b));
+        r = r + 150 > 255 ? 255 : r + 150;
+        g = g + 150 > 255 ? 255 : g + 150;
+        b = b + 150 > 255 ? 255 : b + 150;
+        sColors.put("colorPrimaryDark", Color.rgb(r,g,b));
     }
 
 }

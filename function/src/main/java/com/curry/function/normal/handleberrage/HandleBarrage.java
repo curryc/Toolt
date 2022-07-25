@@ -3,11 +3,9 @@ package com.curry.function.normal.handleberrage;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.SeekBar;
-import android.widget.TextView;
+import android.widget.*;
 import android.os.Bundle;
+import com.curry.function.App;
 import com.curry.function.R;
 import com.curry.function.base.BaseActivity;
 import com.curry.util.view.ColorPickerView;
@@ -20,12 +18,14 @@ public class HandleBarrage extends BaseActivity
     public static final String TEXT_SPEED = "textSpeed";
     public static final String TEXT_COLOR = "textColor";
     public static final String BACK_COLOR = "backColor";
+    public static final String MODE_SCROLLING = "scroll";
     private final String TAG = "barrage";
 
     private EditText mText;
     private SeekBar mSize, mSpeed;
     private TextView mSizeHint, mSpeedHint;
     private Button mColor, mBackColor, mShow;
+    private RadioGroup mMode;
 
     @Override
     protected int getLayoutId() {
@@ -47,6 +47,7 @@ public class HandleBarrage extends BaseActivity
         mColor = findViewById(R.id.text_color);
         mBackColor = findViewById(R.id.back_color);
         mShow = findViewById(R.id.show);
+        mMode = findViewById(R.id.mode);
 
         mColor.setOnClickListener(this);
         mBackColor.setOnClickListener(this);
@@ -54,6 +55,8 @@ public class HandleBarrage extends BaseActivity
 
         mSizeHint.setText(getString(R.string.handle_barrage_hint_size) + ": " + mSize.getProgress());
         mSpeedHint.setText(getString(R.string.handle_barrage_hint_speed) + ": " + mSpeed.getProgress());
+        mMode.check(R.id.scroll_mode);
+        mShow.setBackgroundColor(App.getThemeColor());
 
         mSize.setOnSeekBarChangeListener(this);
         mSpeed.setOnSeekBarChangeListener(this);
@@ -85,8 +88,13 @@ public class HandleBarrage extends BaseActivity
             data.putString(TEXT, mText.getText().toString());
             data.putInt(TEXT_SIZE, mSize.getProgress());
             data.putInt(TEXT_SPEED, mSpeed.getProgress());
-            data.putInt(TEXT_COLOR, ((ColorDrawable)mColor.getBackground()).getColor());
-            data.putInt(BACK_COLOR, ((ColorDrawable)mBackColor.getBackground()).getColor());
+            data.putInt(TEXT_COLOR, ((ColorDrawable) mColor.getBackground()).getColor());
+            data.putInt(BACK_COLOR, ((ColorDrawable) mBackColor.getBackground()).getColor());
+            if (mMode.getCheckedRadioButtonId() == R.id.scroll_mode) {
+                data.putBoolean(MODE_SCROLLING, true);
+            } else {
+                data.putBoolean(MODE_SCROLLING, false);
+            }
             i.putExtras(data);
             startActivity(i);
         }

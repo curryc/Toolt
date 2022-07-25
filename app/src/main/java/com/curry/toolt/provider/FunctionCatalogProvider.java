@@ -38,7 +38,7 @@ public class FunctionCatalogProvider extends BaseViewProvider<FunctionCatalog> {
         mRights = new SparseArray<>();
 
         mHintBackground = new GradientDrawable();
-        mHintBackground.setTint(App.getThemeColor("colorPrimary"));
+        mHintBackground.setTint(App.getThemeColor());
         mHintBackground.setCornerRadius(mContext.getResources().getDimensionPixelSize(R.dimen.round_rec_radius));
     }
 

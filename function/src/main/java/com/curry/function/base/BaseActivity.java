@@ -38,7 +38,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            int[] colors = {App.getThemeColor("colorPrimary"), App.getThemeColor("colorPrimaryDark")};
+            int[] colors = {App.getThemeColor("colorPrimary"),
+                    App.getThemeColor("colorPrimaryDark")};
             GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
             background.setGradientType(GradientDrawable.RECTANGLE);
             actionBar.setBackgroundDrawable(background);

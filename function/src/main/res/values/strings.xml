@@ -9,6 +9,8 @@
 
     <string name="handle_barrage_hint">please enter the barrage</string>
     <string name="handle_barrage_hint_size">text size</string>
+    <string name="handle_barrage_static">Static</string>
+    <string name="handle_barrage_scroll">Scrolling</string>
     <string name="handle_barrage_hint_speed">move speed</string>
     <string name="handle_barrage_text_color">text color</string>
     <string name="handle_barrage_back_color">back color</string>

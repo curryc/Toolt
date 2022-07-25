@@ -178,7 +178,7 @@ public class MainActivity extends BaseActivity {
 //        }
 
         int[][] states = new int[][]{new int[]{}};
-        int[] tints = new int[]{App.getThemeColor("colorPrimary")};
+        int[] tints = new int[]{App.getThemeColor()};
         ColorStateList colorStateList = new ColorStateList(states, tints);
         mNavigationView.setItemIconTintList(colorStateList);
         Logger.v(mNavigationView.getItemIconTintList().toString());
@@ -186,7 +186,7 @@ public class MainActivity extends BaseActivity {
 
         CollapsingToolbarLayout toolbarLayout = findViewById(R.id.toolbar_layout);
 
-        int[] colors = {App.getThemeColor("colorPrimary"),
+        int[] colors = {App.getThemeColor(),
                 App.getThemeColor("colorPrimaryDark")};
         GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
         background.setGradientType(GradientDrawable.RECTANGLE);

@@ -66,7 +66,7 @@ public class RoundDotButton extends FrameLayout {
 
         FrameLayout button = mRootView.findViewById(R.id.button_round_dot);
         GradientDrawable background = new GradientDrawable();
-        background.setTint(App.getThemeColor("colorPrimary"));
+        background.setTint(App.getThemeColor());
         background.setCornerRadius(getResources().getDimensionPixelOffset(R.dimen.round_dot_button_radius));
         button.setBackground(background);
     }

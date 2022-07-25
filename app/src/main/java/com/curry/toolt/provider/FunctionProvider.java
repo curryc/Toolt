@@ -32,7 +32,7 @@ public class FunctionProvider extends BaseViewProvider<Function> {
         super(mContext, R.layout.holder_func);
 
         background = new GradientDrawable();
-        background.setTint(App.getThemeColor("colorPrimary"));
+        background.setTint(App.getThemeColor());
         background.setCornerRadius(mContext.getResources().getDimensionPixelSize(R.dimen.function_rec_radius));
     }
 
