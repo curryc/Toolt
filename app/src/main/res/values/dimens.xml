@@ -36,4 +36,5 @@
 
     <dimen name="theme_hint_width">20dp</dimen>
     <dimen name="theme_edit_width">200dp</dimen>
+    <dimen name="theme_color_picker_size">300dp</dimen>
 </resources>

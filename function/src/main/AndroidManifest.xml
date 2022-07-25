@@ -7,9 +7,14 @@
                 android:name=".base.BaseActivity"
                 android:theme="@style/BackAppTheme"
                 android:exported="true"/>
+
         <activity
                 android:name=".normal.handleberrage.HandleBarrage"
                 android:exported="true"/>
+        <activity android:name=".normal.handleberrage.ShowActivity"
+                  android:exported="true"
+                  android:theme="@style/AppLandTheme"></activity>
+
         <activity android:name=".device.sinaudio.SinAudio"
                   android:theme="@style/BackAppTheme"
                   android:label="SinAudio"

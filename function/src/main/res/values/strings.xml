@@ -6,4 +6,11 @@
 
     <string name="sin_audio_hint_head">Frequency(Hz): </string>
     <string name="sin_audio_hint">Drag to change frequency</string>
+
+    <string name="handle_barrage_hint">please enter the barrage</string>
+    <string name="handle_barrage_hint_size">text size</string>
+    <string name="handle_barrage_hint_speed">move speed</string>
+    <string name="handle_barrage_text_color">text color</string>
+    <string name="handle_barrage_back_color">back color</string>
+    <string name="handle_barrage_show">SHOW</string>
 </resources>

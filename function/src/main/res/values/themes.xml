@@ -7,6 +7,7 @@
         <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
     </style>
 
+    <!--带返回按键的活动-->
     <style name="BackAppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!--ToolBar区域背景颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -30,14 +31,62 @@
         <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
         <item name="android:windowActionBar">false</item>
     </style>
+    
+    <!--横屏全屏活动-->
+    <style name="AppLandTheme" parent="Theme.AppCompat.NoActionBar">
+        <!--ToolBar区域背景颜色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏区域背景颜色-->
+        <item name="colorPrimaryDark">@color/white</item>
+        <!--控制各个控件被选中时的颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
 
+        <item name="android:screenOrientation">landscape</item>
+        <item name="android:windowFullscreen">true</item>
+
+        <!--页面背景色-->
+        <item name="android:windowBackground">@color/white</item>
+        <!--api 21 可用 底部导航栏颜色-->
+        <item name="android:navigationBarColor">@color/gray</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <!--api 21 可用 各个控制控件的默认颜色-->
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <!--文字样式-->
     <style name="WindowTitleAppearance" parent="TextAppearance.AppCompat.Large">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="AnnotationTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="NormalTextAppearance" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="BigTextAppearance" parent="NormalTextAppearance">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MiddleTextAppearance" parent="NormalTextAppearance">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="NavItemTextAppearance" parent="NormalTextAppearance">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!--edit的样式-->
+    <style name="NormalEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textAlignment">viewStart</item>
+        <item name="singleLine">true</item>
+        <item name="hintTextAppearance">@style/NormalTextAppearance</item>
         <item name="android:textColor">@color/black</item>
     </style>
 </resources>

@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="@dimen/main_padding"
+        android:orientation="vertical"
         tools:context=".normal.handleberrage.HandleBarrage">
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_mid"
+            android:text="@string/handle_barrage_hint"
+            android:textAppearance="@style/AnnotationTextAppearance"></TextView>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text"
+            style="@style/NormalEditText"></EditText>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/size_hint"
+            android:layout_marginTop="@dimen/vertical_margin_mid"
+            android:text="@string/handle_barrage_hint_size"
+            android:textAppearance="@style/AnnotationTextAppearance"></TextView>
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="30"
+            android:progress="15"
+            android:id="@+id/size"
+            android:layout_marginTop="@dimen/vertical_margin_sml"></SeekBar>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/speed_hint"
+            android:layout_marginTop="@dimen/vertical_margin_mid"
+            android:text="@string/handle_barrage_hint_speed"
+            android:textAppearance="@style/AnnotationTextAppearance"></TextView>
+    <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="30"
+            android:progress="15"
+            android:id="@+id/speed"
+            android:layout_marginTop="@dimen/vertical_margin_sml"></SeekBar>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin_sml"
+            android:orientation="horizontal">
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:id="@+id/text_color"
+                android:text="@string/handle_barrage_text_color"
+                android:layout_weight="1"></Button>
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:id="@+id/back_color"
+                android:text="@string/handle_barrage_back_color"
+                android:layout_weight="1"></Button>
+    </LinearLayout>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:id="@+id/show"
+            android:text="@string/handle_barrage_show"
+            android:layout_marginTop="@dimen/horizontal_margin_mid"></Button>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

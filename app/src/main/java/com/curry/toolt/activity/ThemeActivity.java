@@ -1,24 +1,22 @@
 package com.curry.toolt.activity;
 
-import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.View;
+import android.view.*;
 import android.widget.*;
 import androidx.appcompat.widget.Toolbar;
 import com.curry.function.App;
 import com.curry.toolt.R;
 import com.curry.toolt.base.TopToolbarActivity;
+import com.curry.util.view.ColorPickerView;
 import com.curry.util.cache.SharedPreferencesHelper;
 
 public class ThemeActivity extends TopToolbarActivity implements View.OnClickListener, TextWatcher, View.OnFocusChangeListener {
     private final String TAG = "themeActivity";
 
-    private ImageView mColorCircle;
+    //    private ImageView mColorCircle;
+    private ColorPickerView mColorPicker;
     private EditText mRed, mGreen, mBlue;
     private Button mSave;
 
@@ -40,7 +38,7 @@ public class ThemeActivity extends TopToolbarActivity implements View.OnClickLis
 
         mInitColor = App.getThemeColor("colorPrimary");
 
-        mColorCircle = findViewById(R.id.color_circle);
+//        mColorCircle = findViewById(R.id.color_circle);
         mRed = findViewById(R.id.red);
         mGreen = findViewById(R.id.green);
         mBlue = findViewById(R.id.blue);
@@ -51,21 +49,6 @@ public class ThemeActivity extends TopToolbarActivity implements View.OnClickLis
         mGreen.setText(String.valueOf(Color.green(mInitColor)));
         mBlue.setText(String.valueOf(Color.blue(mInitColor)));
 
-        mColorCircle.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) mChangeMode = Mode.Touch;
-                if (event.getAction() == MotionEvent.ACTION_UP) {
-                    int color = ((BitmapDrawable) mColorCircle.getDrawable()).getBitmap().getPixel((int) event.getX(), (int) event.getY());
-                    mSave.setBackgroundColor(color);
-                    mRed.setText(String.valueOf(Color.red(color)));
-                    mGreen.setText(String.valueOf(Color.green(color)));
-                    mBlue.setText(String.valueOf(Color.blue(color)));
-                }
-                return true;
-            }
-        });
-
         mSave.setOnClickListener(this::onClick);
         mRed.addTextChangedListener(this);
         mGreen.addTextChangedListener(this);
@@ -74,6 +57,23 @@ public class ThemeActivity extends TopToolbarActivity implements View.OnClickLis
         mRed.setOnFocusChangeListener(this);
         mGreen.setOnFocusChangeListener(this);
         mBlue.setOnFocusChangeListener(this);
+
+
+        int size = getResources().getDimensionPixelSize(R.dimen.theme_color_picker_size);
+        mColorPicker = new ColorPickerView(this, size, size, mInitColor);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(size, size, Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+        mColorPicker.setLayoutParams(params);
+        container.addView(mColorPicker);
+        mColorPicker.setOnColorChangedListener(new ColorPickerView.OnColorChangedListener() {
+            @Override
+            public void colorChanged(int color) {
+                mSave.setBackgroundColor(color);
+                mRed.setText(String.valueOf(Color.red(color)));
+                mGreen.setText(String.valueOf(Color.green(color)));
+                mBlue.setText(String.valueOf(Color.blue(color)));
+            }
+        });
+        mColorPicker.setOnFocusChangeListener(this);
     }
 
     @Override
@@ -95,7 +95,11 @@ public class ThemeActivity extends TopToolbarActivity implements View.OnClickLis
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
-        if(hasFocus) mChangeMode =Mode.Edit;
+        if (v.equals(mColorPicker)) {
+            mChangeMode = Mode.Touch;
+        } else {
+            if (hasFocus) mChangeMode = Mode.Edit;
+        }
     }
 
     @Override

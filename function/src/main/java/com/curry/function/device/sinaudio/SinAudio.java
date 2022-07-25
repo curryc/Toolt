@@ -180,8 +180,10 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
     @Override
     protected void onFinish() {
         super.onFinish();
-        mAudio.stop();
-        endTimer();
+        if(status == Status.Playing) {
+            mAudio.stop();
+            endTimer();
+        }
     }
 
     private class Timer implements Runnable {
