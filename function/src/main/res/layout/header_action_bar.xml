@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
           android:id="@+id/display_title"
-          android:text="hello world"
           android:textAppearance="@style/WindowTitleAppearance"
           android:gravity="center"
           android:layout_gravity="center"

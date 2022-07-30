@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:theme="@style/AppLandTheme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ruler_container">
+    <com.curry.function.normal.ruler.RulerView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/main_button"></com.curry.function.normal.ruler.RulerView>
+
+</FrameLayout>

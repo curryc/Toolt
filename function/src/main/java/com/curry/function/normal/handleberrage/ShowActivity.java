@@ -4,15 +4,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.Time;
-import android.view.Gravity;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.WindowInsets;
+import android.view.*;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.curry.function.R;
 import com.curry.function.base.BaseActivity;
+import com.curry.function.base.BaseLandActivity;
 import com.curry.util.log.Logger;
 import com.curry.util.view.ScrollTextView;
 
@@ -26,26 +24,19 @@ import java.util.Timer;
  * @create: 2022-07-24 01:38
  * @description: 专门用来展示弹幕的全屏活动
  **/
-public class ShowActivity extends BaseActivity
+public class ShowActivity extends BaseLandActivity
         implements View.OnTouchListener {
     private ScrollTextView mTextView;
     private Bundle data;
 
     @Override
-    protected int getLayoutId() {
+    protected int LayoutId() {
         return R.layout.handle_barrage_show;
     }
 
     @Override
-    protected String getWindowTitle() {
-        return null;
-    }
-
-    @Override
     protected void initView() {
-        initWindow();
         data = getIntent().getExtras();
-
 
         FrameLayout container = findViewById(R.id.barrage_container);
         container.setBackgroundColor(data.getInt(HandleBarrage.BACK_COLOR));
@@ -74,27 +65,8 @@ public class ShowActivity extends BaseActivity
         }
     }
 
-    private void initWindow() {
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            getWindow().getInsetsController().hide(WindowInsets.Type.statusBars() | WindowInsets.Type.navigationBars());
-        } else {
-            getWindow().getDecorView().setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LOW_PROFILE
-                            | View.SYSTEM_UI_FLAG_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-            );
-        }
-    }
-
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-//        if(event.getAction() == MotionEvent.ACTION_MOVE){
-//            event.get
-//        }
         return true;
     }
 }

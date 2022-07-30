@@ -16,7 +16,6 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        setTheme(R.style.AppTheme_Blue);
         App.init(this);
         Collect.init();
         initTheme();

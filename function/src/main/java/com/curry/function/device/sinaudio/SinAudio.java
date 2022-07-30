@@ -10,6 +10,7 @@ import androidx.annotation.RequiresPermission;
 import com.curry.function.App;
 import com.curry.function.R;
 import com.curry.function.base.BaseActivity;
+import com.curry.function.base.BaseBackActivity;
 import com.curry.util.log.Logger;
 
 import java.util.concurrent.ExecutorService;
@@ -22,7 +23,8 @@ import java.util.concurrent.Executors;
  * @create: 2022-07-15 23:01
  * @description: 发生正弦波
  **/
-public class SinAudio extends BaseActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
+public class SinAudio extends BaseBackActivity
+        implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     private final String TAG = "SinAudio";
     private SeekBar mSeekBar;
     private TextView mHint;
@@ -46,7 +48,7 @@ public class SinAudio extends BaseActivity implements View.OnClickListener, Seek
     }
 
     @Override
-    protected int getLayoutId() {
+    protected int LayoutId() {
         return R.layout.sin_audio;
     }
 

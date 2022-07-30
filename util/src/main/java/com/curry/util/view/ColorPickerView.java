@@ -177,11 +177,6 @@ public class ColorPickerView extends View {
         return true;
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(mWidth, mHeight);
-    }
-
     /**
      * 坐标是否在色环上
      *

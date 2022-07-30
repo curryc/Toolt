@@ -1,21 +1,16 @@
 package com.curry.function.base;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.MenuItem;
-import android.view.WindowInsetsController;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.curry.function.App;
@@ -30,27 +25,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     private List<TurnBackListener> mTurnBackListeners = new ArrayList<>();
     private Toast mToast;
 
-    @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        init();
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+        setContentView(LayoutId());
 
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            int[] colors = {App.getThemeColor("colorPrimary"),
-                    App.getThemeColor("colorPrimaryDark")};
-            GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
-            background.setGradientType(GradientDrawable.RECTANGLE);
-            actionBar.setBackgroundDrawable(background);
-            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            actionBar.setCustomView(R.layout.header_action_bar);//设置标题样式
-            TextView textView = (TextView) actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
-            textView.setText(getWindowTitle());//设置标题名称，menuTitle为String字符串
-            actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
-            actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标
-            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
-        }
         initData();
         initView();
     }
@@ -161,7 +141,11 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @return
      */
-    protected abstract int getLayoutId();
+    protected abstract int LayoutId();
+    /**
+     * 当前Theme
+     */
+    protected abstract void init();
 
     /**
      * 初始化数据

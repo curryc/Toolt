@@ -10,17 +10,20 @@
 
         <activity
                 android:name=".normal.handleberrage.HandleBarrage"
-                android:theme="@style/BackAppTheme"
-                android:label="HandleBarrage"
                 android:exported="true"/>
         <activity android:name=".normal.handleberrage.ShowActivity"
                   android:exported="true"
+                  android:screenOrientation="landscape"
                   android:theme="@style/AppLandTheme"></activity>
 
         <activity android:name=".device.sinaudio.SinAudio"
-                  android:theme="@style/BackAppTheme"
-                  android:label="SinAudio"
                   android:exported="true"/>
+
+
+        <activity android:name=".normal.ruler.Ruler"
+                  android:exported="true"
+                  android:screenOrientation="landscape"
+                  android:theme="@style/AppLandTheme"></activity>
     </application>
 
 </manifest>

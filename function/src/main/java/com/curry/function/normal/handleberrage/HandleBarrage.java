@@ -8,10 +8,11 @@ import android.os.Bundle;
 import com.curry.function.App;
 import com.curry.function.R;
 import com.curry.function.base.BaseActivity;
+import com.curry.function.base.BaseBackActivity;
 import com.curry.util.view.ColorPickerView;
 import com.curry.util.dialog.ColorPicker;
 
-public class HandleBarrage extends BaseActivity
+public class HandleBarrage extends BaseBackActivity
         implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     public static final String TEXT = "text";
     public static final String TEXT_SIZE = "textSize";
@@ -28,7 +29,7 @@ public class HandleBarrage extends BaseActivity
     private RadioGroup mMode;
 
     @Override
-    protected int getLayoutId() {
+    protected int LayoutId() {
         return R.layout.handle_barrage;
     }
 
