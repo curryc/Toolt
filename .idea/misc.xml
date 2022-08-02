@@ -63,6 +63,7 @@
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/ic_word.xml" value="0.25416666666666665" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/drawable/unselective.xml" value="0.2916666666666667" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout-land/activity_land_full.xml" value="0.34322916666666664" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout-land/ruler_correction_item.xml" value="0.37864583333333335" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/activity_base.xml" value="0.19199999334161955" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/activity_handle_barrage.xml" value="0.29375" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/activity_land_full.xml" value="0.2203125" />
@@ -70,7 +71,10 @@
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/handle_barrage.xml" value="0.21818181061547676" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/handle_barrage_show.xml" value="0.1745454484923814" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/header_action_bar.xml" value="0.21818181061547676" />
-        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/ruler.xml" value="0.19199999334161955" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/ruler.xml" value="0.1745454484923814" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/ruler_correction.xml" value="0.1745454484923814" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/ruler_correction_item.xml" value="0.29270833333333335" />
+        <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/ruler_correction_item_selected.xml" value="0.29270833333333335" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/layout/sin_audio.xml" value="0.1" />
         <entry key="..\:/Program/Java/AndroidProjects/Toolt/function/src/main/res/xml/function_list.xml" value="0.29375" />
         <entry key="..\:/school/02/SoftwareEngineering/POS/POS/Toolt/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3098958333333333" />

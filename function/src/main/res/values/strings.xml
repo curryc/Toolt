@@ -15,4 +15,10 @@
     <string name="handle_barrage_text_color">text color</string>
     <string name="handle_barrage_back_color">back color</string>
     <string name="handle_barrage_show">SHOW</string>
+
+    <string name="ruler_clear">Clear</string>
+    <string name="ruler_correction">Correct</string>
+    <string name="ruler_correction_confirm">Confirm</string>
+    <string name="ruler_correction_cancel">Cancel</string>
+    <string name="ruler_correction_zero_hint">You chose a invalid value</string>
 </resources>

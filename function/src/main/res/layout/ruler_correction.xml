@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <SeekBar
+            android:layout_width="1500px"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|start"
+            android:max="1500"
+            android:id="@+id/correction_length"></SeekBar>
+    <Spinner
+            android:layout_width="@dimen/spinner_width"
+            android:layout_height="@dimen/spinner_height"
+            android:layout_marginTop="@dimen/bottom_margin"
+            android:layout_marginEnd="@dimen/bottom_margin"
+            android:visibility="visible"
+            android:layout_gravity="top|end"
+            android:id="@+id/spinner"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="@dimen/spinner_height"/>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:layout_marginEnd="@dimen/bottom_margin">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vertical_margin_sml"
+                android:text="@string/ruler_correction_cancel"
+                android:id="@+id/ruler_correction_cancel"></Button>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ruler_correction_confirm"
+                android:layout_toRightOf="@id/ruler_correction_cancel"
+                android:id="@+id/ruler_correcttion_confirm"></Button>
+    </RelativeLayout>
+</FrameLayout>

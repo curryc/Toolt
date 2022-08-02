@@ -24,6 +24,10 @@
                   android:exported="true"
                   android:screenOrientation="landscape"
                   android:theme="@style/AppLandTheme"></activity>
+        <activity android:name=".normal.ruler.Correction"
+                  android:exported="true"
+                  android:screenOrientation="landscape"
+                  android:theme="@style/AppLandTheme"></activity>
     </application>
 
 </manifest>

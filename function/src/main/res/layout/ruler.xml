@@ -3,10 +3,30 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:theme="@style/AppLandTheme"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/ruler_container">
+        android:layout_height="match_parent">
     <com.curry.function.normal.ruler.RulerView
             android:layout_width="match_parent"
-            android:layout_height="@dimen/main_button"></com.curry.function.normal.ruler.RulerView>
+            android:layout_height="match_parent"
+            android:id="@+id/ruler"></com.curry.function.normal.ruler.RulerView>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:layout_marginEnd="@dimen/bottom_margin">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/vertical_margin_sml"
+                android:text="@string/ruler_clear"
+                android:id="@+id/clear"></Button>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ruler_correction"
+                android:layout_toRightOf="@id/clear"
+                android:id="@+id/correction"></Button>
+    </RelativeLayout>
 
 </FrameLayout>
