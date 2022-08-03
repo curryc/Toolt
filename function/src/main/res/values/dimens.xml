@@ -5,8 +5,8 @@
 
     <dimen name="round_radius">10dp</dimen>
     <dimen name="spinner_width">100dp</dimen>
-    <dimen name="spinner_height">25dp</dimen>
-    <dimen name="spinner_item_height">20dp</dimen>
+    <dimen name="spinner_height">40dp</dimen>
+    <dimen name="spinner_item_height">40dp</dimen>
 
     <dimen name="bottom_padding">128dp</dimen>
     <dimen name="bottom_margin">40dp</dimen>

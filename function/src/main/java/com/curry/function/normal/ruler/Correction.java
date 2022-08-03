@@ -1,14 +1,11 @@
 package com.curry.function.normal.ruler;
 
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.*;
 import com.curry.function.App;
 import com.curry.function.R;
 import com.curry.function.base.BaseLandActivity;
 import com.curry.util.cache.SharedPreferencesHelper;
-import org.w3c.dom.Text;
-
 
 /**
  * @program: Toolt
@@ -35,12 +32,15 @@ public class Correction extends BaseLandActivity {
         mCancel = findViewById(R.id.ruler_correction_cancel);
         mConfirm = findViewById(R.id.ruler_correcttion_confirm);
 
-        mSeekbar.setProgress((int) SharedPreferencesHelper.get(this, Ruler.PER_MILLIMETER, RulerView.DEFAULT_MILLIMETER));
+
+        mSeekbar.setProgress(50 * (int) SharedPreferencesHelper.get(this,
+                Ruler.PER_MILLIMETER,
+                RulerView.DEFAULT_MILLIMETER));
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                R.layout.ruler_correction_item,
+                R.layout.ruler_spinner_item,
                 mode);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.ruler_spinner_dropdown_item);
 //        mSpinner.setPrompt(mode[0]);
         mSpinner.setAdapter(adapter);
         mSpinner.setSelection(0);
@@ -59,7 +59,11 @@ public class Correction extends BaseLandActivity {
                 if (mSeekbar.getProgress() == 0) {
                     toastShort(getString(R.string.ruler_correction_zero_hint));
                 } else {
-                    SharedPreferencesHelper.put(Correction.this, Ruler.PER_MILLIMETER, mSeekbar.getProgress());
+                    if (mSpinner.getSelectedItem().equals(mode[0])) {
+                        SharedPreferencesHelper.put(Correction.this, Ruler.PER_MILLIMETER, mSeekbar.getProgress() / 50);
+                    } else if (mSpinner.getSelectedItem().equals(mode[1])) {
+                        SharedPreferencesHelper.put(Correction.this, Ruler.PER_MILLIMETER, mSeekbar.getProgress() / 85.6);
+                    }
                     setResult(RESULT_OK);
                     finish();
                 }
