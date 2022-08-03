@@ -3,6 +3,7 @@
     <string name="sin_audio">SinAudio</string>
     <string name="image_cropping">ImageCropping</string>
     <string name="ruler">Ruler</string>
+    <string name="calculator">Calculator</string>
 
     <string name="sin_audio_hint_head">Frequency(Hz): </string>
     <string name="sin_audio_hint">Drag to change frequency</string>
@@ -22,4 +23,15 @@
     <string name="ruler_correction_cancel">Cancel</string>
     <string name="ruler_correction_zero_hint">You chose a invalid value</string>
     <string name="ruler_correction_hint">Length: </string>
+
+    <string name="calculator_answer">ANS</string>
+    <string name="calculator_formula">Enter</string>
+    <string name="calculator_bad_hint">Bad formula</string>
+    <string name="rad">rad</string>
+    <string name="sin">sin</string>
+    <string name="arc_sin">arcs</string>
+    <string name="cos">cos</string>
+    <string name="arc_cos">arcc</string>
+    <string name="tan">t\an</string>
+    <string name="arc_tan">arct</string>
 </resources>

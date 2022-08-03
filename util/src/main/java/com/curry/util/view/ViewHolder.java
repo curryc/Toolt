@@ -1,4 +1,4 @@
-package com.curry.toolt.base;
+package com.curry.util.view;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -86,6 +86,25 @@ public class ViewHolder {
             Logger.e(TAG, "can set src");
             return false;
         }
+    }
+
+    /**
+     * 对子View设置backgroundColor
+     * @param layoutId
+     * @param color
+     * @return
+     */
+    public boolean setBackgroundColor(int color, int...layoutId) {
+        for (int i : layoutId) {
+            try {
+                ImageView view = getViewById(i);
+                view.setBackgroundColor(color);
+            } catch (Exception e) {
+                Logger.e(TAG, "can set src");
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

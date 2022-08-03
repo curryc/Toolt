@@ -12,6 +12,12 @@ import com.curry.function.base.BaseBackActivity;
 import com.curry.util.view.ColorPickerView;
 import com.curry.util.dialog.ColorPicker;
 
+/**
+ * @program: Toolt
+ * @author: 陈博文
+ * @create: 2022-07-23 22:20
+ * @description: 手持弹幕
+ **/
 public class HandleBarrage extends BaseBackActivity
         implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     public static final String TEXT = "text";
@@ -50,14 +56,12 @@ public class HandleBarrage extends BaseBackActivity
         mShow = findViewById(R.id.show);
         mMode = findViewById(R.id.mode);
 
-        mColor.setOnClickListener(this);
-        mBackColor.setOnClickListener(this);
-        mShow.setOnClickListener(this);
+        setBackgroundColor(App.getThemeColor(), R.id.show);
+        setClickListener(this, R.id.text_color, R.id.back_color, R.id.show);
 
         mSizeHint.setText(getString(R.string.handle_barrage_hint_size) + ": " + mSize.getProgress());
         mSpeedHint.setText(getString(R.string.handle_barrage_hint_speed) + ": " + mSpeed.getProgress());
         mMode.check(R.id.scroll_mode);
-        mShow.setBackgroundColor(App.getThemeColor());
 
         mSize.setOnSeekBarChangeListener(this);
         mSpeed.setOnSeekBarChangeListener(this);

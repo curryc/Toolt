@@ -14,4 +14,13 @@
     <dimen name="horizontal_margin_mid">25dp</dimen>
     <dimen name="vertical_margin_mid">20dp</dimen>
     <dimen name="vertical_margin_sml">10dp</dimen>
+
+    <dimen name="calculator_text_height">128dp</dimen>
+    <dimen name="calculator_text_sml_height">64dp</dimen>
+    <dimen name="calculator_margin">3dp</dimen>
+    <dimen name="calculator_text_big_size">40sp</dimen>
+    <dimen name="calculator_text_sml_size">32sp</dimen>
+    <dimen name="calculator_button_size">25sp</dimen>
+    <dimen name="calculator_button_sml">12sp</dimen>
+    <dimen name="calculator_button_mid">15sp</dimen>
 </resources>

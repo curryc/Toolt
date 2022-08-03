@@ -8,8 +8,8 @@ import com.curry.function.bean.FunctionCatalog;
 import com.curry.toolt.R;
 import com.curry.toolt.adpter.HeaderFooterAdapter;
 import com.curry.toolt.base.BaseFragment;
-import com.curry.toolt.base.ViewHolder;
 import com.curry.toolt.provider.FunctionCatalogProvider;
+import com.curry.util.view.ViewHolder;
 
 public class HomeFragment extends BaseFragment {
     private final String TAG = "HomeFragment";

@@ -3,7 +3,7 @@ package com.curry.toolt.ui.more;
 import android.view.View;
 import com.curry.toolt.R;
 import com.curry.toolt.base.BaseFragment;
-import com.curry.toolt.base.ViewHolder;
+import com.curry.util.view.ViewHolder;
 
 public class MoreFragment extends BaseFragment {
     @Override

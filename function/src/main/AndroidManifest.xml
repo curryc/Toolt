@@ -28,6 +28,10 @@
                   android:exported="true"
                   android:screenOrientation="landscape"
                   android:theme="@style/AppLandTheme"></activity>
+
+        <activity android:name=".calculate.calculator.ScientificCalculator"
+                  android:exported="true"
+                  android:theme="@style/BackAppTheme"></activity>
     </application>
 
 </manifest>

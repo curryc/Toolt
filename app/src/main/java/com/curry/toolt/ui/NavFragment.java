@@ -3,10 +3,10 @@ package com.curry.toolt.ui;
 import android.view.View;
 import com.curry.toolt.R;
 import com.curry.toolt.base.BaseFragment;
-import com.curry.toolt.base.ViewHolder;
 import com.curry.toolt.ui.collect.CollectFragment;
 import com.curry.toolt.ui.home.HomeFragment;
 import com.curry.toolt.ui.more.MoreFragment;
+import com.curry.util.view.ViewHolder;
 import com.curry.toolt.widget.NavigationButton;
 
 import java.util.ArrayList;

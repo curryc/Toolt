@@ -19,8 +19,8 @@ import com.curry.toolt.R;
 import com.curry.toolt.activity.SelectFuncActivity;
 import com.curry.toolt.adpter.SingleTypeAdapter;
 import com.curry.toolt.base.BaseFragment;
-import com.curry.toolt.base.ViewHolder;
 import com.curry.toolt.provider.FunctionProvider;
+import com.curry.util.view.ViewHolder;
 import org.jetbrains.annotations.NotNull;
 
 public class CollectFragment extends BaseFragment implements View.OnClickListener {

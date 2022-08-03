@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.curry.function.App;
 import com.curry.function.R;
+import com.curry.util.log.Logger;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -106,6 +108,42 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public void toastShort(String text) {
         toast(text, Toast.LENGTH_SHORT);
+    }
+
+
+    /**
+     * 批量设置背景颜色
+     * @param color
+     * @param layoutId
+     * @return
+     */
+    protected boolean setBackgroundColor(int color, int...layoutId){
+        for (int i : layoutId) {
+            try {
+                findViewById(i).setBackgroundColor(color);
+            } catch (Exception e) {
+                Logger.e( "can set src");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 批量设置单击监听
+     * @param listener
+     * @param ids
+     * @return
+     */
+    protected boolean setClickListener(View.OnClickListener listener, int...ids){
+        if (ids == null) {
+            return false;
+        } else {
+            for (int id : ids) {
+                findViewById(id).setOnClickListener(listener);
+            }
+            return true;
+        }
     }
 
     /**
