@@ -1,10 +1,16 @@
-package com.curry.util.dialog;
+package com.curry.util.picker;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.Gravity;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatDialog;
+import com.curry.util.R;
 import com.curry.util.view.ColorPickerView;
 
 /**
@@ -56,25 +62,20 @@ public class ColorPicker extends Dialog {
         int width = 0;
         int height = 0;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
-            height = (int) (manager.getCurrentWindowMetrics().getBounds().height() * 0.5f);
+            height = (int) (manager.getCurrentWindowMetrics().getBounds().height() * 0.4f);
             width = (int) (manager.getCurrentWindowMetrics().getBounds().width() * 0.7f);
         } else {
-            height = (int) (manager.getDefaultDisplay().getHeight() * 0.5f);
+            height = (int) (manager.getDefaultDisplay().getHeight() * 0.4f);
             width = (int) (manager.getDefaultDisplay().getWidth() * 0.7f);
         }
-        colorPickerView = new ColorPickerView(mContext, height, width, 0);
+        colorPickerView = new ColorPickerView(mContext, height, width,  mInitialColor);
         if(mListener!= null) colorPickerView.setOnColorChangedListener(mListener);
-        setContentView(colorPickerView);
-        setTitle(mTitle);
-    }
-
-
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        this.mTitle = title;
+        WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+        params.gravity = Gravity.CENTER;
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        params.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        setContentView(colorPickerView, params);
+//        setTitle(mTitle);
     }
 
     public int getInitialColor() {

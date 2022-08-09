@@ -4,6 +4,7 @@ import com.curry.function.R;
 import com.curry.function.bean.Function;
 import com.curry.function.calculate.calculator.ScientificCalculator;
 import com.curry.function.device.sinaudio.SinAudio;
+import com.curry.function.image.stitch.Stitch;
 import com.curry.function.normal.handleberrage.HandleBarrage;
 import com.curry.function.normal.ruler.Ruler;
 
@@ -30,14 +31,19 @@ public class Config {
     };
 
 
-    // 功能分类的级别
+    /**
+     * 功能分类的级别
+     */
     public final static String[] level = {"普通功能", "新鲜功能", "VIP功能", "测试功能"};
 
-    // 每个功能
+    /**
+     * 每个功能
+     */
     public final static Function[] functions = {
             new Function(R.string.handle_barrage, 0, 0, HandleBarrage.class),
             new Function(R.string.sin_audio, 5, 1, SinAudio.class),
             new Function(R.string.image_cropping, 3, 0, HandleBarrage.class),
+            new Function(R.string.image_stitch, 3, 1, Stitch.class),
             new Function(R.string.ruler, 0, 1, Ruler.class),
             new Function(R.string.calculator, 2, 0, ScientificCalculator.class)
     };

@@ -4,11 +4,12 @@ import android.content.Context;
 import android.os.Environment;
 
 import java.io.File;
+
 /**
  * @program: Toolt
  * @author: 陈博文
  * @create: 2022-07-04 20:03
- * @description: 文件工具,通过这个文件获取系统中各种目录
+ * @description: 文件工具, 通过这个文件获取系统中各种目录
  **/
 public class FileUtil {
     private FileUtil() {
@@ -31,11 +32,41 @@ public class FileUtil {
         mkdir(path);
         return path;
     }
+
     /**
      * @return 程序系统缓存目录
      */
     public static String getCacheDir(Context context) {
         return String.valueOf(context.getCacheDir());
+    }
+
+    /**
+     * 获取图片目录
+     *
+     * @return 图片目录（/storage/emulated/0/Pictures）
+     */
+    public static File getExtPicturesPath(Context context) {
+        File extPicturesPath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        if (!extPicturesPath.exists()) {
+            extPicturesPath.mkdir();
+        }
+        return extPicturesPath;
+    }
+
+    /**
+     * 获取缓存图片的目录
+     *
+     * @param context Context
+     * @return 缓存图片的目录
+     */
+    public static String getImageCacheDir(Context context) {
+        String cachePath;
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+            cachePath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath();
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        return cachePath;
     }
 
     /**
@@ -48,12 +79,14 @@ public class FileUtil {
         mkdir(path);
         return path;
     }
+
     /**
      * @return 内存卡文件目录
      */
     public static String getExternalFileDir(Context context) {
         return String.valueOf(context.getExternalFilesDir(""));
     }
+
     /**
      * @param context    上下文
      * @param customPath 自定义路径
@@ -64,6 +97,7 @@ public class FileUtil {
         mkdir(path);
         return path;
     }
+
     /**
      * @return 内存卡缓存目录
      */
@@ -81,12 +115,14 @@ public class FileUtil {
         mkdir(path);
         return path;
     }
+
     /**
      * @return 公共下载文件夹
      */
     public static String getPublicDownloadDir() {
         return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
     }
+
     /**
      * 创建文件夹
      *

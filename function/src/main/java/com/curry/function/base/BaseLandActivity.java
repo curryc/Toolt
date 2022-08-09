@@ -40,11 +40,6 @@ public abstract class BaseLandActivity extends BaseActivity {
         }
     }
 
-    @Override
-    final protected String getWindowTitle() {
-        return null;
-    }
-
     private void initWindow() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             // 以下操作设置当前活动可以拓展到屏幕边缘（让状态栏也展示信息）

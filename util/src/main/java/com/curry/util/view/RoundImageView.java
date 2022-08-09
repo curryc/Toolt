@@ -1,4 +1,4 @@
-package com.curry.toolt.widget;
+package com.curry.util.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

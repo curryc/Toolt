@@ -7,10 +7,9 @@ import android.widget.*;
 import android.os.Bundle;
 import com.curry.function.App;
 import com.curry.function.R;
-import com.curry.function.base.BaseActivity;
 import com.curry.function.base.BaseBackActivity;
 import com.curry.util.view.ColorPickerView;
-import com.curry.util.dialog.ColorPicker;
+import com.curry.util.picker.ColorPicker;
 
 /**
  * @program: Toolt
@@ -77,6 +76,7 @@ public class HandleBarrage extends BaseBackActivity
                     v.setBackgroundColor(color);
                 }
             });
+            colorPicker.setTitle("hello");
             colorPicker.show();
         } else if (v.getId() == mBackColor.getId()) {
             ColorDrawable d = (ColorDrawable) v.getBackground();

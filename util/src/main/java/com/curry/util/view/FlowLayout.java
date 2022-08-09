@@ -1,4 +1,4 @@
-package com.curry.toolt.widget;
+package com.curry.util.view;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -371,6 +371,10 @@ public class ScientificCalculator extends BaseBackActivity
         });
     }
 
+    /**
+     * 一般按钮的点击事件
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         mFormula = mFormula + ((Button) v).getText();
@@ -382,7 +386,11 @@ public class ScientificCalculator extends BaseBackActivity
         mText.setText(mFormula);
     }
 
-    //长度是带着那个可能的乘号的长度,flag为true代表应该删除这个乘号,false为不应该
+    /**
+     * 长度是带着那个可能的乘号的长度,flag为true代表应该删除这个乘号,false为不应该
+     * @param length
+     * @param flagForDel
+     */
     private void delAbFormula(int length, boolean flagForDel) {
         //如果前面隐藏了一个乘号,并且这个乘号应当删除(取决于mFormula中是否有一个乘号,有就不应该删除,否则删除)
         if (flagForDel) {

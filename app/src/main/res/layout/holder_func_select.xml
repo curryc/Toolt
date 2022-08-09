@@ -13,11 +13,11 @@
               android:layout_gravity="center"
               android:text="hello"
               android:id="@+id/select_title"></TextView>
-    <com.curry.toolt.widget.RoundImageView
+    <com.curry.util.view.RoundImageView
             android:layout_width="@dimen/round_dot_list_item_dot"
             android:layout_height="@dimen/round_dot_list_item_dot"
             android:layout_gravity="right|top"
-            android:id="@+id/select_dot"></com.curry.toolt.widget.RoundImageView>
+            android:id="@+id/select_dot"/>
     <ImageView android:layout_width="@dimen/select_radio"
                android:layout_height="@dimen/select_radio"
                android:id="@+id/select_radio"

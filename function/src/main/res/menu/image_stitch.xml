@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/clear_all"
+            android:icon="@android:drawable/ic_notification_clear_all"
+            android:title="@string/image_stitch_clear"
+            app:showAsAction="ifRoom">
+    </item>
+    <item
+            android:id="@+id/add_image"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="@string/image_stitch"
+            app:showAsAction="ifRoom|withText">
+    </item>
+</menu>

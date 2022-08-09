@@ -76,6 +76,21 @@ public class ColorPickerView extends View {
         rectBottom = rectTop + 50;
     }
 
+    /**
+     * 设置view的大小
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        setMeasuredDimension((MeasureSpec.getMode(widthMeasureSpec)==MeasureSpec.EXACTLY)?
+                        MeasureSpec.getSize(widthMeasureSpec):mWidth,
+                (MeasureSpec.getMode(heightMeasureSpec)==MeasureSpec.EXACTLY)?
+                        MeasureSpec.getSize(heightMeasureSpec):mHeight);
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         //移动中心，开始画图

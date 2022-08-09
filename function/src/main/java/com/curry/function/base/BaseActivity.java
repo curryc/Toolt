@@ -192,13 +192,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 获取当前窗口的标题
-     *
-     * @return
-     */
-    protected abstract String getWindowTitle();
-
-    /**
      * 初始化视图
      */
     protected abstract void initView();

@@ -2,6 +2,7 @@
     <string name="handle_barrage">HandleBarrage</string>'
     <string name="sin_audio">SinAudio</string>
     <string name="image_cropping">ImageCropping</string>
+    <string name="image_stitch">ImageStitching</string>
     <string name="ruler">Ruler</string>
     <string name="calculator">Calculator</string>
 
@@ -34,4 +35,8 @@
     <string name="arc_cos">arcc</string>
     <string name="tan">t\an</string>
     <string name="arc_tan">arct</string>
+
+
+    <string name="image_stitch_add">ADD</string>
+    <string name="image_stitch_clear">CLR</string>
 </resources>

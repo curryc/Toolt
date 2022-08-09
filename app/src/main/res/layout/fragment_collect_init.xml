@@ -29,12 +29,12 @@
                   android:textSize="20sp"
                   android:text="@string/collect_zero"
                   android:layout_gravity="center"></TextView>
-        <com.curry.toolt.widget.RoundImageView
+        <com.curry.util.view.RoundImageView
                 android:layout_width="@dimen/collect_add"
                 android:layout_height="@dimen/collect_add"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin_sml"
                 android:layout_gravity="right|center_vertical"
-                android:src="@drawable/ic_add"></com.curry.toolt.widget.RoundImageView>
+                android:src="@drawable/ic_add"></com.curry.util.view.RoundImageView>
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

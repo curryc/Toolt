@@ -32,6 +32,10 @@
         <activity android:name=".calculate.calculator.ScientificCalculator"
                   android:exported="true"
                   android:theme="@style/BackAppTheme"></activity>
+
+        <activity android:name=".image.stitch.Stitch"
+                  android:exported="true"
+                  android:theme="@style/BackAppTheme"></activity>
     </application>
 
 </manifest>

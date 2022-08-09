@@ -15,8 +15,8 @@ import com.curry.function.bean.FunctionCatalog;
 import com.curry.toolt.R;
 import com.curry.toolt.base.RecyclerViewHolder;
 import com.curry.toolt.base.BaseViewProvider;
-import com.curry.toolt.widget.FlowLayout;
 import com.curry.toolt.widget.RoundDotButton;
+import com.curry.util.view.FlowLayout;
 
 /**
  * @program: Toolt
