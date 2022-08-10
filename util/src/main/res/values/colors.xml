@@ -41,7 +41,7 @@
     <color name="magenta">#ffff00ff</color>
 
     <color name="transparent">#00000000</color>
-    <color name="translucent">#77000000</color>
+    <color name="translucent">#33000000</color>
 
     <color name="rainbow_red">#bf0c43</color>
     <color name="rainbow_yellow">#f9ba15</color>

@@ -4,7 +4,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <com.curry.util.view.FlowLayout
+            android:id="@+id/image_flow"
+            android:layout_margin="@dimen/vertical_margin_sml"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></com.curry.util.view.FlowLayout>
-
 </ScrollView>

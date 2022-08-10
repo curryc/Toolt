@@ -23,4 +23,6 @@
     <dimen name="calculator_button_size">25sp</dimen>
     <dimen name="calculator_button_sml">12sp</dimen>
     <dimen name="calculator_button_mid">15sp</dimen>
+
+    <dimen name="big_image_button">250dp</dimen>
 </resources>

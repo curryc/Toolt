@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import com.curry.util.R;
 import com.curry.util.bean.Picture;
+import com.curry.util.log.Logger;
 import com.curry.util.permission.PermissionUtils;
 import com.curry.util.picker.ImagePicker;
 
@@ -51,7 +52,8 @@ public class ImagePickerActivity extends AppCompatActivity {
         mRatioHeight = getIntent().getIntExtra(RATIO_HEIGHT, 1);
 
         //请求应用需要的所有权限
-        boolean checkPermissionFirst = PermissionUtils.checkPermissionFirst(this, PERMISSION_CODE_FIRST,
+        boolean checkPermissionFirst = PermissionUtils.checkPermissionFirst(this,
+                PERMISSION_CODE_FIRST,
                 new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                         Manifest.permission.READ_EXTERNAL_STORAGE,
                         Manifest.permission.CAMERA});
@@ -73,6 +75,7 @@ public class ImagePickerActivity extends AppCompatActivity {
         boolean isPermissions = true;
         for (int i = 0; i < permissions.length; i++) {
             if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
+                // 如果权限被拒绝
                 isPermissions = false;
                 if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i])) { //用户选择了"不再询问"
                     if (isToast) {
@@ -84,10 +87,10 @@ public class ImagePickerActivity extends AppCompatActivity {
         }
         isToast = true;
         if (isPermissions) {
-            Log.d("onRequestPermission", "onRequestPermissionsResult: " + "允许所有权限");
+            Logger.d("onRequestPermission", "onRequestPermissionsResult: " + "允许所有权限");
             selectPicture();
         } else {
-            Log.d("onRequestPermission", "onRequestPermissionsResult: " + "有权限不允许");
+            Logger.d("onRequestPermission", "onRequestPermissionsResult: " + "有权限不允许");
             finish();
         }
     }
@@ -106,7 +109,6 @@ public class ImagePickerActivity extends AppCompatActivity {
                     ImagePickerUtils.getByAlbum(ImagePickerActivity.this);
                 } else if (type == ImagePicker.CANCEL) {
                     finish();
-                    ImagePickerActivity.this.overridePendingTransition(0, R.anim.activity_out);//activity延迟150毫秒退出，为了执行完Dialog退出的动画
                 }
             }
         });

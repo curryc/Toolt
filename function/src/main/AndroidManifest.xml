@@ -34,8 +34,7 @@
                   android:theme="@style/BackAppTheme"></activity>
 
         <activity android:name=".image.stitch.Stitch"
-                  android:exported="true"
-                  android:theme="@style/BackAppTheme"></activity>
+                  android:exported="true"></activity>
     </application>
 
 </manifest>

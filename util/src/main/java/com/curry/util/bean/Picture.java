@@ -3,6 +3,7 @@ package com.curry.util.bean;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
+import androidx.annotation.NonNull;
 
 /**
  * @program: Toolt
@@ -73,5 +74,11 @@ public class Picture implements Parcelable {
         dest.writeString(this.path);
         dest.writeParcelable(this.uri, flags);
         dest.writeByte(this.isCut ? (byte) 1 : (byte) 0);
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "path:" + path + "/uri:" + uri;
     }
 }

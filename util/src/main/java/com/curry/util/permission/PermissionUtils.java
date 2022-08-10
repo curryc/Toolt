@@ -20,44 +20,47 @@ import java.util.List;
 public class PermissionUtils {
     /**
      * 第一次检查权限，用在打开应用的时候请求应用需要的所有权限
+     *
      * @param context
-     * @param requestCode   请求码
-     * @param permission    权限数组
+     * @param requestCode 请求码
+     * @param permission  权限数组
      * @return
      */
-    public static boolean checkPermissionFirst(Context context , int requestCode, String[] permission){
+    public static boolean checkPermissionFirst(Activity context, int requestCode, String[] permission) {
         List<String> permissions = new ArrayList<String>();
         for (String per : permission) {
             int permissionCode = ActivityCompat.checkSelfPermission(context, per);
-            if( permissionCode != PackageManager.PERMISSION_GRANTED ) {
+            if (permissionCode != PackageManager.PERMISSION_GRANTED) {
                 permissions.add(per);
             }
         }
-        if(!permissions.isEmpty() ) {
-            ActivityCompat.requestPermissions((Activity) context,permissions.toArray( new String[permissions.size()] ), requestCode);
-            return  false;
-        }else{
-            return  true;
+        if (!permissions.isEmpty()) {
+            // 在这个Activity中申请权限
+            ActivityCompat.requestPermissions(context, permissions.toArray(new String[permissions.size()]), requestCode);
+            return false;
+        } else {
+            return true;
         }
     }
 
     /**
      * 第二次检查权限，用在某个操作需要某个权限的时候调用
+     *
      * @param context
-     * @param requestCode   请求码
-     * @param permission    权限数组
+     * @param requestCode 请求码
+     * @param permission  权限数组
      * @return
      */
-    public static boolean checkPermissionSecond (Context context , int requestCode, String[] permission){
+    public static boolean checkPermissionSecond(Context context, int requestCode, String[] permission) {
         List<String> permissions = new ArrayList<String>();
         for (String per : permission) {
-            int permissionCode = ActivityCompat.checkSelfPermission(context, per );
-            if( permissionCode != PackageManager.PERMISSION_GRANTED ) {
+            int permissionCode = ActivityCompat.checkSelfPermission(context, per);
+            if (permissionCode != PackageManager.PERMISSION_GRANTED) {
                 permissions.add(per);
             }
         }
-        if(!permissions.isEmpty()) {
-            ActivityCompat.requestPermissions((Activity) context,permissions.toArray( new String[permissions.size()] ), requestCode);
+        if (!permissions.isEmpty()) {
+            ActivityCompat.requestPermissions((Activity) context, permissions.toArray(new String[permissions.size()]), requestCode);
 
             /*跳转到应用详情，让用户去打开权限*/
             Intent localIntent = new Intent();
@@ -71,9 +74,9 @@ public class PermissionUtils {
                 localIntent.putExtra("com.android.settings.ApplicationPkgName", context.getPackageName());
             }
             context.startActivity(localIntent);
-            return  false;
-        }else{
-            return  true;
+            return false;
+        } else {
+            return true;
         }
     }
 }

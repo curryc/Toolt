@@ -1,7 +1,9 @@
 package com.curry.util.picker;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.curry.util.image.ImagePickerActivity;
@@ -19,46 +21,24 @@ public class ImagePicker extends AppCompatActivity {
     public static final int CAMERA = 1;//拍照
     public static final int ALBUM = 2;//相册
 
-    public static final int SELECT_REQUEST_CODE = 0x15;//选择图片请求码
     public static final String PICTURE_RESULT = "picture_result";//选择的图片结果
-    private int mRequestCode;
-    private final WeakReference<Activity> mActivity;
-    private final WeakReference<Fragment> mFragment;
 
-    /**
-     * 创建 ImagePicker（用于 Activity）
-     *
-     * @param activity    Activity
-     * @param requestCode 请求码，用于结果回调 onActivityResult() 中判断
-     * @return ImagePicker
-     */
-    public static ImagePicker create(Activity activity, int requestCode) {
-        return new ImagePicker(activity, requestCode);
+    private Context mContext;
+    private ActivityResultLauncher mLauncher;
+
+    public ImagePicker(ActivityResultLauncher launcher, Context context) {
+        this.mLauncher = launcher;
+        this.mContext = context;
     }
 
     /**
      * 创建 ImagePicker（用于 Fragment）
      *
-     * @param fragment    Fragment
-     * @param requestCode 请求码，用于结果回调 onActivityResult() 中判断
+     * @param launcher    ActivityResultLauncher
      * @return ImagePicker
      */
-    public static ImagePicker create(Fragment fragment, int requestCode) {
-        return new ImagePicker(fragment, requestCode);
-    }
-
-    private ImagePicker(Activity activity, int requestCode) {
-        this(activity, (Fragment) null, requestCode);
-    }
-
-    private ImagePicker(Fragment fragment, int requestCode) {
-        this(fragment.getActivity(), fragment, requestCode);
-    }
-
-    private ImagePicker(Activity activity, Fragment fragment, int requestCode) {
-        this.mActivity = new WeakReference(activity);
-        this.mFragment = new WeakReference(fragment);
-        this.mRequestCode = requestCode;
+    public static ImagePicker create(ActivityResultLauncher launcher, Context context) {
+        return new ImagePicker(launcher, context);
     }
 
     /**
@@ -87,18 +67,12 @@ public class ImagePicker extends AppCompatActivity {
      * @param ratioHeight 高比例
      */
     public void selectPicture(boolean cropEnabled, int cropWidth, int cropHeight, int ratioWidth, int ratioHeight) {
-        Activity activity = this.mActivity.get();
-        Fragment fragment = this.mFragment.get();
-        Intent intent = new Intent(activity, ImagePickerActivity.class);
+        Intent intent = new Intent(mContext, ImagePickerActivity.class);
         intent.putExtra(ImagePickerActivity.ENABLE_CROP, cropEnabled);
         intent.putExtra(ImagePickerActivity.CROP_WIDTH, cropWidth);
         intent.putExtra(ImagePickerActivity.CROP_HEIGHT, cropHeight);
         intent.putExtra(ImagePickerActivity.RATIO_WIDTH, ratioWidth);
         intent.putExtra(ImagePickerActivity.RATIO_HEIGHT, ratioHeight);
-        if (fragment != null) {
-            fragment.startActivityForResult(intent, mRequestCode);
-        } else {
-            activity.startActivityForResult(intent, mRequestCode);
-        }
+        mLauncher.launch(intent);
     }
 }
