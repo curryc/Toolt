@@ -1,4 +1,4 @@
-package com.curry.toolt.base;
+package com.curry.util.adpter;
 
 import android.content.Context;
 import android.util.SparseArray;
@@ -12,16 +12,13 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.curry.util.log.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @program: Toolt
  * @author: 陈博文
  * @create: 2022-07-03 16:20
  * @description: 一个ViewHolder, 所有RecyclerView都可以使用,因为不在这里绑定数据,所以此类可以不继承
  **/
-public final class RecyclerViewHolder extends RecyclerView.ViewHolder{
+public class RecyclerViewHolder extends RecyclerView.ViewHolder{
     private final String TAG = "base recycler view holder";
 
     private final SparseArray<View> mViews = new SparseArray<>();

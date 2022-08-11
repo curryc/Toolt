@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.curry.function.App;
 import com.curry.function.bean.Function;
 import com.curry.toolt.R;
-import com.curry.toolt.adpter.SingleTypeAdapter;
 import com.curry.toolt.base.TopToolbarActivity;
 import com.curry.toolt.provider.FunctionProvider;
+import com.curry.util.adpter.SingleTypeAdapter;
 
 public class AllFunctionsActivity extends TopToolbarActivity {
     private RecyclerView mRecyclerView;

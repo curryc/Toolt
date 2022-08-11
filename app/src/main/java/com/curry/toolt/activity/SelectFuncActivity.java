@@ -10,9 +10,9 @@ import com.curry.function.App;
 import com.curry.function.Collect;
 import com.curry.function.bean.Function;
 import com.curry.toolt.R;
-import com.curry.toolt.adpter.SingleTypeAdapter;
 import com.curry.toolt.base.TopToolbarActivity;
 import com.curry.toolt.provider.FunctionSelectProvider;
+import com.curry.util.adpter.SingleTypeAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

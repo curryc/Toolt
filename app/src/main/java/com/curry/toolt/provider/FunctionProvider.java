@@ -2,15 +2,14 @@ package com.curry.toolt.provider;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 import android.widget.AdapterView;
 import com.curry.function.App;
 import com.curry.function.bean.Function;
 import com.curry.toolt.R;
-import com.curry.toolt.base.BaseViewProvider;
-import com.curry.toolt.base.RecyclerViewHolder;
+import com.curry.util.adpter.RecyclerViewHolder;
+import com.curry.util.base.BaseViewProvider;
 
 /**
  * @program: Toolt

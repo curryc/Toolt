@@ -5,8 +5,8 @@ import android.view.View;
 import com.curry.function.App;
 import com.curry.function.bean.Function;
 import com.curry.toolt.R;
-import com.curry.toolt.base.BaseViewProvider;
-import com.curry.toolt.base.RecyclerViewHolder;
+import com.curry.util.adpter.RecyclerViewHolder;
+import com.curry.util.base.BaseViewProvider;
 
 import java.util.ArrayList;
 import java.util.List;

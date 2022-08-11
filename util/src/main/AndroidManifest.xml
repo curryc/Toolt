@@ -9,5 +9,8 @@
     <application>
         <activity android:name=".image.ImagePickerActivity"
                   android:exported="true"></activity>
+
+        <activity android:name=".image.ImageShowActivity"
+                  android:exported="true"></activity>
     </application>
 </manifest>

@@ -1,7 +1,7 @@
-package com.curry.toolt.adpter.mutitype;
+package com.curry.util.adpter.mutitype;
 
-import com.curry.toolt.base.BaseViewProvider;
 import com.curry.util.log.Logger;
+import com.curry.util.base.BaseViewProvider;
 
 import java.util.ArrayList;
 import java.util.List;

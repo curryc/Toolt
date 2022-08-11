@@ -1,4 +1,4 @@
-package com.curry.toolt.adpter;
+package com.curry.util.adpter;
 
 import android.os.Bundle;
 import androidx.annotation.NonNull;

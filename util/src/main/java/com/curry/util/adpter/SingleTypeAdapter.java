@@ -1,12 +1,11 @@
-package com.curry.toolt.adpter;
+package com.curry.util.adpter;
 
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.curry.toolt.adpter.mutitype.MultipleType;
-import com.curry.toolt.adpter.mutitype.TypePool;
-import com.curry.toolt.base.BaseViewProvider;
-import com.curry.toolt.base.RecyclerViewHolder;
+import com.curry.util.adpter.mutitype.MultipleType;
+import com.curry.util.adpter.mutitype.TypePool;
+import com.curry.util.base.BaseViewProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ import java.util.List;
  * @create: 2022-07-12 08:49
  * @description: 单一类型的适配器，只能显示一种数据
  **/
-public class SingleTypeAdapter extends RecyclerView.Adapter<RecyclerViewHolder> implements TypePool{
+public class SingleTypeAdapter extends RecyclerView.Adapter<RecyclerViewHolder> implements TypePool {
     private TypePool mTypePool;
     private List<Object> mItems;
 
@@ -50,6 +49,21 @@ public class SingleTypeAdapter extends RecyclerView.Adapter<RecyclerViewHolder> 
 
     public void addData(List<?> data){
         mItems.addAll(data);
+        notifyDataSetChanged();
+    }
+
+    public void addData(Object data){
+        mItems.add(data);
+        notifyDataSetChanged();
+    }
+
+    public void deleteData(int index){
+        mItems.remove(index);
+        notifyDataSetChanged();
+    }
+
+    public void deleteData(Object obj){
+        mItems.remove(obj);
         notifyDataSetChanged();
     }
 

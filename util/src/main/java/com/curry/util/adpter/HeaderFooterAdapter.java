@@ -1,12 +1,11 @@
-package com.curry.toolt.adpter;
+package com.curry.util.adpter;
 
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.curry.toolt.adpter.mutitype.MultipleType;
-import com.curry.toolt.adpter.mutitype.TypePool;
-import com.curry.toolt.base.BaseViewProvider;
-import com.curry.toolt.base.RecyclerViewHolder;
+import com.curry.util.adpter.mutitype.MultipleType;
+import com.curry.util.adpter.mutitype.TypePool;
+import com.curry.util.base.BaseViewProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

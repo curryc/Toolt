@@ -18,6 +18,26 @@
         <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
     </style>
 
+    <style name="AnimCenter" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/activity_in</item>
+        <item name="android:windowExitAnimation">@anim/activity_out</item>
+    </style>
+
+    <style name="CenterActivity" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- 是否有边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--是否在悬浮Activity之上  -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--阴影  -->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <!--背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 弹出和退出的动画-->
+        <item name="android:windowAnimationStyle">@style/AnimCenter</item>
+    </style>
+
     <!-- ActionSheet进出动画 -->
     <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
         <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>

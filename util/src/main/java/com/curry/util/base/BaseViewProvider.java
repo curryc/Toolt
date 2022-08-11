@@ -1,9 +1,10 @@
-package com.curry.toolt.base;
+package com.curry.util.base;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.curry.util.adpter.RecyclerViewHolder;
 
 /**
  * @program: Toolt
@@ -21,7 +22,7 @@ public abstract class BaseViewProvider<T>{
      * @param mContext　用来获取inflater
      * @param mLayoutId　展示一种数据的布局
      */
-    public BaseViewProvider(Context mContext,  int mLayoutId) {
+    public BaseViewProvider(Context mContext, int mLayoutId) {
         this.mContext = mContext;
         this.inflater = LayoutInflater.from(mContext);
         this.mLayoutId = mLayoutId;

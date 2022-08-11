@@ -27,13 +27,6 @@ public abstract class BaseBackActivity extends BaseActivity{
             GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
             background.setGradientType(GradientDrawable.RECTANGLE);
             actionBar.setBackgroundDrawable(background);
-
-//            actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//            actionBar.setCustomView(R.layout.header_action_bar);//设置标题样式
-//            TextView textView = (TextView) actionBar.getCustomView().findViewById(R.id.display_title);//获取标题布局的textview
-//            textView.setText(getWindowTitle());//设置标题名称，menuTitle为String字符串
-//            actionBar.setDisplayShowCustomEnabled(true);// 使自定义的普通View能在title栏显示，即actionBar.setCustomView能起作用
-
             actionBar.setTitle(getWindowTitle());
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击
             actionBar.setDisplayHomeAsUpEnabled(true);//给左上角图标的左边加上一个返回的图标

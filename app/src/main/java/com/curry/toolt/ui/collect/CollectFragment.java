@@ -17,9 +17,9 @@ import com.curry.function.Collect;
 import com.curry.function.bean.Function;
 import com.curry.toolt.R;
 import com.curry.toolt.activity.SelectFuncActivity;
-import com.curry.toolt.adpter.SingleTypeAdapter;
 import com.curry.toolt.base.BaseFragment;
 import com.curry.toolt.provider.FunctionProvider;
+import com.curry.util.adpter.SingleTypeAdapter;
 import com.curry.util.view.ViewHolder;
 import org.jetbrains.annotations.NotNull;
 
