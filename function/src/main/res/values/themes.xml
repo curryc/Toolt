@@ -8,12 +8,12 @@
     </style>
 
     <style name="AnimBottom" parent="@android:style/Animation">
-        <item name="android:activityOpenEnterAnimation">@anim/slide_in_bottom</item>
-        <item name="android:activityOpenExitAnimation">@anim/slide_out_bottom</item>
-        <item name="android:activityCloseEnterAnimation">@anim/slide_in_bottom</item>
-        <item name="android:activityCloseExitAnimation">@anim/slide_out_bottom</item>
         <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
         <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+        <item name="android:activityOpenEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@android:anim/fade_out</item>
+        <item name="android:activityCloseEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@android:anim/fade_out</item>
     </style>
 
     <style name="AnimCenter" parent="@android:style/Animation">
@@ -99,8 +99,7 @@
     </style>
 
     <style name="BigTextAppearance" parent="NormalTextAppearance">
-        <item name="android:textAlignment">center</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">25sp</item>
     </style>
 
     <style name="MiddleTextAppearance" parent="NormalTextAppearance">

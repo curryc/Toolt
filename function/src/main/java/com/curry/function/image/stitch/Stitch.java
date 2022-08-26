@@ -119,7 +119,9 @@ public class Stitch extends BaseBackActivity implements View.OnClickListener {
     public void onClick(View v) {
         // make
 //        if(mImages.size() == 0) return;
-        startActivity(new Intent(this, ChoseModeDialog.class));
+        Intent i = new Intent(this, ChoseModeDialog.class);
+        i.putExtra(ChoseModeDialog.DATA, mImagesUri.toArray(new String[0]));
+        startActivity(i);
     }
 
     class RoundRecImageProvider extends BaseViewProvider<Picture> {

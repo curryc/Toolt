@@ -39,4 +39,13 @@
 
     <string name="image_stitch_add">ADD</string>
     <string name="image_stitch_clear">CLR</string>
+    <string name="image_stitch_mode">MODE</string>
+    <string name="image_stitch_mode_horizontal">Horizontal</string>
+    <string name="image_stitch_mode_vertical">Vertical</string>
+    <string name="image_stitch_mode_lines">Lines</string>
+    <string name="image_stitch_title">Stitch</string>
+    <string name="image_stitch_size">Image Size</string>
+    <string name="image_stitch_margin">Image Margin</string>
+    <string name="image_stitch_background_color">Background Color</string>
+    <string name="image_stitch_format">Format</string>
 </resources>

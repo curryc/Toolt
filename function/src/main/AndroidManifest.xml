@@ -37,6 +37,10 @@
         <activity android:name=".image.stitch.ChoseModeDialog"
                   android:theme="@style/BottomDialog"
                   android:exported="true"></activity>
+        <activity android:name=".image.stitch.NormalStitch"
+                  android:exported="true"></activity>
+        <activity android:name=".image.stitch.LinesStitch"
+                  android:exported="true"></activity>
     </application>
 
 </manifest>

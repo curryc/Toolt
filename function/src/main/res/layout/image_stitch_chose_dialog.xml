@@ -7,18 +7,66 @@
         android:layout_gravity="bottom"
         android:background="@drawable/top_radius_white_dialog">
     <TextView android:layout_width="wrap_content"
-              android:layout_height="@dimen/bottom_dialog_hint"
-              android:text="hello world"
-              android:textAlignment="center"
+              android:layout_height="wrap_content"
+              android:text="@string/image_stitch_mode"
               android:textAppearance="@style/BigTextAppearance"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent"
-              android:id="@+id/textView" app:layout_constraintEnd_toEndOf="parent"/>
+              android:id="@+id/textView"
+              android:layout_marginTop="@dimen/bottom_dialog_margin"
+              android:layout_marginStart="@dimen/bottom_dialog_margin"/>
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:layout_marginTop="@dimen/bottom_dialog_radius"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
-
+        <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="0dp"
+                     android:layout_weight="1"
+                     android:id="@+id/horizontal"
+                     android:clickable="true"
+                     android:background="@drawable/round_rec_5dp_stroke"
+                     android:layout_marginBottom="5dp">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center|start"
+                      android:textAppearance="@style/BigTextAppearance"
+                      android:layout_marginStart="@dimen/bottom_dialog_margin"
+                      android:textAlignment="center"
+                      android:text="@string/image_stitch_mode_horizontal"></TextView>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="0dp"
+                     android:layout_weight="1"
+                     android:id="@+id/vertical"
+                     android:clickable="true"
+                     android:background="@drawable/round_rec_5dp_stroke"
+                     android:layout_marginBottom="5dp">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center|start"
+                      android:textAppearance="@style/BigTextAppearance"
+                      android:layout_marginStart="@dimen/bottom_dialog_margin"
+                      android:textAlignment="center"
+                      android:text="@string/image_stitch_mode_vertical"></TextView>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="0dp"
+                     android:layout_weight="1"
+                     android:id="@+id/lines"
+                     android:clickable="true"
+                     android:background="@drawable/round_rec_5dp_stroke"
+                     android:layout_marginBottom="5dp">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center|start"
+                      android:textAppearance="@style/BigTextAppearance"
+                      android:layout_marginStart="@dimen/bottom_dialog_margin"
+                      android:textAlignment="center"
+                      android:text="@string/image_stitch_mode_lines"></TextView>
+        </FrameLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
