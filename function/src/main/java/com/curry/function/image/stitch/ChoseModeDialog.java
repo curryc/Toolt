@@ -32,7 +32,7 @@ public class ChoseModeDialog extends BaseBottomDialog {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChoseModeDialog.this, NormalStitch.class);
-                i.putExtra(NormalStitch.MODE, true);
+                i.putExtra(NormalStitch.MODE, false);
                 i.putExtra(DATA, uris);
                 startActivity(i);
             }
@@ -41,7 +41,7 @@ public class ChoseModeDialog extends BaseBottomDialog {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ChoseModeDialog.this, NormalStitch.class);
-                i.putExtra(NormalStitch.MODE, false);
+                i.putExtra(NormalStitch.MODE, true);
                 i.putExtra(DATA, uris);
                 startActivity(i);
             }

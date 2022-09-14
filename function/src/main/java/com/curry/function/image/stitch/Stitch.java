@@ -118,7 +118,7 @@ public class Stitch extends BaseBackActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         // make
-//        if(mImages.size() == 0) return;
+        if(mImages.size() == 0) return;
         Intent i = new Intent(this, ChoseModeDialog.class);
         i.putExtra(ChoseModeDialog.DATA, mImagesUri.toArray(new String[0]));
         startActivity(i);

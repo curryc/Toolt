@@ -48,4 +48,6 @@
     <string name="image_stitch_margin">Image Margin</string>
     <string name="image_stitch_background_color">Background Color</string>
     <string name="image_stitch_format">Format</string>
+    <string name="image_stitch_line_height">Line Height</string>
+    <string name="image_stitch_save">Save</string>
 </resources>

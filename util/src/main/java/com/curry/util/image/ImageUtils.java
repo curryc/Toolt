@@ -3,13 +3,19 @@ package com.curry.util.image;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.provider.MediaStore;
+import com.curry.util.file.FileUtil;
+import com.curry.util.log.Logger;
 
-import java.io.File;
+import java.io.*;
+import java.util.Date;
 
 /**
  * @program: Toolt
@@ -59,6 +65,70 @@ public class ImageUtils {
         } finally {
             if (cursor != null) {
                 cursor.close();
+            }
+        }
+    }
+
+    /**
+     * 储存一个bitmap,在Q版本之前后之后时不一样的，前者直接用输出流刷，后者用MediaStore，需要编写图片的其他信息
+     * @param context
+     * @param bitmap
+     * @param filename
+     * @param description
+     * @throws IOException
+     */
+    public static void saveBitmap(Context context, Bitmap bitmap, String filename, String description) throws IOException {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
+            // 首先创建一个需要的抽象文件,目录可能需要重新创建
+            File saveDir = FileUtil.getExtPicturesPath(context);
+            saveDir = new File(saveDir, "toolt");
+            if (!saveDir.exists() && !saveDir.mkdirs()) {
+                try {
+                    throw new Exception("create directory fail!");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            Logger.d("SMG", saveDir.getAbsolutePath());
+            File outputFile = new File(saveDir, filename);
+            FileOutputStream fos = null;
+            try {
+                fos = new FileOutputStream(outputFile);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            // 直接吧图片刷到文件中
+            BufferedOutputStream bos = new BufferedOutputStream(fos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 80, bos);
+            bos.flush();
+            bos.close();
+            // 通知图库更新
+            context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(outputFile)));
+        } else {
+            // 编写ContentValues
+            String path = Environment.DIRECTORY_PICTURES + "toolt";
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, filename);
+            contentValues.put(MediaStore.Images.Media.DESCRIPTION, description);
+            contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, path);
+            contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
+            contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
+            // 将文件插入到外部共享储存空间(防止外部污染)
+            Uri external = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+            Uri insertUri = context.getContentResolver().insert(external, contentValues);
+            // 文件刷入
+            OutputStream fos = (OutputStream) null;
+            if (insertUri != null) {
+                try {
+                    fos = context.getContentResolver().openOutputStream(insertUri);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (fos != null) {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fos);
+                fos.flush();
+                fos.close();
             }
         }
     }

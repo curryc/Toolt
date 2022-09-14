@@ -22,10 +22,11 @@ public abstract class BaseBackActivity extends BaseActivity{
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            int[] colors = {App.getThemeColor("colorPrimary"),
-                    App.getThemeColor("colorPrimaryDark")};
+            int[] colors = {App.getThemeColor("colorPrimaryDark"),
+                    App.getThemeColor("colorPrimary")
+                    };
             GradientDrawable background = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, colors);
-            background.setGradientType(GradientDrawable.RECTANGLE);
+            background.setGradientType(GradientDrawable.LINEAR_GRADIENT);
             actionBar.setBackgroundDrawable(background);
             actionBar.setTitle(getWindowTitle());
             actionBar.setHomeButtonEnabled(true);//设置左上角的图标是否可以点击

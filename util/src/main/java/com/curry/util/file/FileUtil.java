@@ -46,10 +46,7 @@ public class FileUtil {
      * @return 图片目录（/storage/emulated/0/Pictures）
      */
     public static File getExtPicturesPath(Context context) {
-        File extPicturesPath = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        if (!extPicturesPath.exists()) {
-            extPicturesPath.mkdir();
-        }
+        File extPicturesPath = new File(getExternalFileDir(context, Environment.DIRECTORY_PICTURES));
         return extPicturesPath;
     }
 
@@ -81,20 +78,12 @@ public class FileUtil {
     }
 
     /**
-     * @return 内存卡文件目录
-     */
-    public static String getExternalFileDir(Context context) {
-        return String.valueOf(context.getExternalFilesDir(""));
-    }
-
-    /**
      * @param context    上下文
-     * @param customPath 自定义路径
+     * @param type 外部共享储存类型
      * @return 内存卡文件目录
      */
-    public static String getExternalFileDir(Context context, String customPath) {
-        String path = context.getExternalFilesDir("") + formatPath(customPath);
-        mkdir(path);
+    public static String getExternalFileDir(Context context, String type) {
+        String path = context.getExternalFilesDir(type) + type;
         return path;
     }
 

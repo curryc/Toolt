@@ -147,26 +147,3 @@ public class FunctionCatalogProvider extends BaseViewProvider<FunctionCatalog> {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
