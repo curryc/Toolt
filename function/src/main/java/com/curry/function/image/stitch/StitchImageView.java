@@ -129,7 +129,6 @@ public class StitchImageView extends View {
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if (mImages == null || mImages.size() == 0) return;
 //        System.out.println(MeasureSpec.getSize(widthMeasureSpec) + ":" + MeasureSpec.getSize(heightMeasureSpec));
         this.widthMeasureSpec = widthMeasureSpec;

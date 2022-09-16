@@ -68,11 +68,8 @@ public class NormalStitch extends BaseBackActivity
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    ImageUtils.saveBitmap(NormalStitch.this, image.getBitmap(), Formatter.getFileFormatString(new Date()) + ".jpg", "made by toolt");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                ImageUtils.saveBitmap(NormalStitch.this, image.getBitmap(), Formatter.getFileFormatString(new Date()) + ".jpg", "made by toolt");
+                toastShort("saved in Pictures/toolt");
             }
         });
     }
@@ -117,9 +114,9 @@ public class NormalStitch extends BaseBackActivity
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        if(seekBar.equals(mSize)){
+        if (seekBar.equals(mSize)) {
             image.setSize(seekBar.getProgress());
-        }else if(seekBar.equals(mMargin)){
+        } else if (seekBar.equals(mMargin)) {
             image.setMargin(seekBar.getProgress() * 3);
         }
     }

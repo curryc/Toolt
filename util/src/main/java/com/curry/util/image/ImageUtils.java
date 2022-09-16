@@ -16,6 +16,9 @@ import com.curry.util.log.Logger;
 
 import java.io.*;
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 
 /**
  * @program: Toolt
@@ -70,6 +73,31 @@ public class ImageUtils {
     }
 
     /**
+     *
+     * @param context
+     * @param bitmap
+     * @param filename
+     * @param description
+     * @return
+     */
+    public static boolean saveBitmap(Context context, Bitmap bitmap, String filename, String description) {
+        ExecutorService service = Executors.newSingleThreadExecutor();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    saveBitmapInPublicDirectory(context, bitmap, filename, description);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        service.execute(runnable);
+        return true;
+    }
+
+
+    /**
      * 储存一个bitmap,在Q版本之前后之后时不一样的，前者直接用输出流刷，后者用MediaStore，需要编写图片的其他信息
      * @param context
      * @param bitmap
@@ -77,7 +105,7 @@ public class ImageUtils {
      * @param description
      * @throws IOException
      */
-    public static void saveBitmap(Context context, Bitmap bitmap, String filename, String description) throws IOException {
+    private static boolean saveBitmapInPublicDirectory(Context context, Bitmap bitmap, String filename, String description) throws IOException {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
             // 首先创建一个需要的抽象文件,目录可能需要重新创建
             File saveDir = FileUtil.getExtPicturesPath(context);
@@ -87,6 +115,7 @@ public class ImageUtils {
                     throw new Exception("create directory fail!");
                 } catch (Exception e) {
                     e.printStackTrace();
+                    return false;
                 }
             }
             Logger.d("SMG", saveDir.getAbsolutePath());
@@ -123,6 +152,7 @@ public class ImageUtils {
                     fos = context.getContentResolver().openOutputStream(insertUri);
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
+                    return false;
                 }
             }
             if (fos != null) {
@@ -131,6 +161,7 @@ public class ImageUtils {
                 fos.close();
             }
         }
+        return true;
     }
 
     /**

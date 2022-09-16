@@ -65,11 +65,8 @@ public class LinesStitch extends BaseBackActivity
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    ImageUtils.saveBitmap(LinesStitch.this, image.getBitmap(), Formatter.getFileFormatString(new Date()), "made by toolt");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                ImageUtils.saveBitmap(LinesStitch.this, image.getBitmap(), Formatter.getFileFormatString(new Date()), "made by toolt");
+                toastShort("saved in Pictures/toolt");
             }
         });
     }
