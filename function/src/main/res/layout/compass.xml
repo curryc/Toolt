@@ -4,9 +4,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/container">
-    <androidx.recyclerview.widget.RecyclerView
+    <com.curry.util.view.FlowLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/text_area_height"
+            android:id="@+id/flow"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="@dimen/vertical_margin_sml"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_marginBottom="@dimen/vertical_margin_sml"></com.curry.util.view.FlowLayout>
 </FrameLayout>
