@@ -68,7 +68,7 @@ public class NormalStitch extends BaseBackActivity
         mSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageUtils.saveBitmap(NormalStitch.this, image.getBitmap(), Formatter.getFileFormatString(new Date()) + ".jpg", "made by toolt");
+                ImageUtils.saveBitmap(NormalStitch.this, image.getBitmap(), Formatter.getFileFormatString(new Date()), "made by toolt");
                 toastShort("saved in Pictures/toolt");
             }
         });

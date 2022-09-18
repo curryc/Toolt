@@ -86,7 +86,7 @@ public class ImageUtils {
             @Override
             public void run() {
                 try {
-                    saveBitmapInPublicDirectory(context, bitmap, filename, description);
+                    saveBitmapInPublicDirectory(context, bitmap, filename + ".jpg", description);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -135,13 +135,12 @@ public class ImageUtils {
             context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(outputFile)));
         } else {
             // 编写ContentValues
-            String path = Environment.DIRECTORY_PICTURES + "toolt";
+            String path = Environment.DIRECTORY_PICTURES + "/toolt";
             ContentValues contentValues = new ContentValues();
             contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, filename);
             contentValues.put(MediaStore.Images.Media.DESCRIPTION, description);
             contentValues.put(MediaStore.Images.Media.RELATIVE_PATH, path);
             contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
-            contentValues.put(MediaStore.Images.Media.IS_PENDING, 1);
             // 将文件插入到外部共享储存空间(防止外部污染)
             Uri external = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
             Uri insertUri = context.getContentResolver().insert(external, contentValues);

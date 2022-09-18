@@ -1,4 +1,4 @@
-package com.curry.toolt.base;
+package com.curry.util.base;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,16 +10,19 @@ import androidx.annotation.Nullable;
  * @description: EventBus的基础Event
  **/
 public class BaseEvent<T> {
+    public static final int NETWORK_WRONG_CODE = -1;
+    public static final int EVERYTHING_RIGHT = 200;
+
     protected String id;
     protected boolean ok;
     protected int code;
-    protected T value;
+    protected T data;
 
     public BaseEvent(@Nullable String id, @NonNull int code, @Nullable T value) {
         this.id = id;
         this.ok = null != value;
         this.code = code;
-        this.value = value;
+        this.data = value;
     }
 
     public BaseEvent(@Nullable String id, boolean ok) {
@@ -29,7 +32,7 @@ public class BaseEvent<T> {
 
     public BaseEvent setEvent(@NonNull int code, @Nullable T value) {
         this.code = code;
-        this.value = value;
+        this.data = value;
         this.ok = null != value;
         return this;
     }
@@ -75,7 +78,7 @@ public class BaseEvent<T> {
         return code;
     }
 
-    public T getValue() {
-        return value;
+    public T getData() {
+        return data;
     }
 }

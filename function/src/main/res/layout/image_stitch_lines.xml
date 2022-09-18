@@ -37,5 +37,5 @@
             android:background="@color/light_gray"
             android:id="@+id/save"
             android:layout_weight="3"
-            android:text="@string/image_stitch_save"/>
+            android:text="@string/save"/>
 </LinearLayout>

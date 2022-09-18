@@ -7,6 +7,12 @@
     <string name="calculator">Calculator</string>
     <string name="compass">Compass</string>
 
+    <string name="save">Save</string>
+    <string name="search">Search</string>
+    <string name="searching">Searching</string>
+    <string name="hold_on">Please Hold On</string>
+    <string name="save_successfully">Save Successfully!</string>
+
     <string name="sin_audio_hint_head">Frequency(Hz): </string>
     <string name="sin_audio_hint">Drag to change frequency</string>
 
@@ -50,5 +56,6 @@
     <string name="image_stitch_background_color">Background Color</string>
     <string name="image_stitch_format">Format</string>
     <string name="image_stitch_line_height">Line Height</string>
-    <string name="image_stitch_save">Save</string>
+
+    <string name="bilibili_hint">Please enter a BV number</string>
 </resources>
