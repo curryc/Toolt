@@ -1,9 +1,7 @@
 package com.curry.util.database;
 
 import android.content.ContentValues;
-import android.content.Context;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.lang.reflect.InvocationTargetException;
@@ -16,17 +14,17 @@ import java.util.List;
  * @author: 陈博文
  * @create: 2022-09-21 18:44
  * @description: 数据库操作
- * D为数据库张储存的数据的bean， Helper为SQLiteOpenHelper的子类， Wrapper是BaseCursorWrapper 的子类
+ * D为数据库储存的数据的bean， Helper为SQLiteOpenHelper的子类， Wrapper是BaseCursorWrapper 的子类
  * 创建一个类继承SQLiteOpenHelper{@link SQLiteOpenHelper}， 在其中的onCreate方法中创建数据库（如果有表就不创建了）
  * 创建一个类继承BaseCursorWrapper{@link BaseCursorWrapper}， 这个类的泛型必须对应泛型D
  * implements接口ProvideContentValues{@link ProvideContentValues}，在其中的getContentValues方法中写出获取D这个泛型的ContentValues{@link ContentValues}的方法
  * 然后调用这个方法的init方法，之后可以进行各种数据库操作
  **/
-public class Database<D extends Object, Helper extends SQLiteOpenHelper, Wrapper extends BaseCursorWrapper<D>> {
+public class SQLiteDatabase<D extends Object, Helper extends SQLiteOpenHelper, Wrapper extends BaseCursorWrapper<D>> {
     private static final int VERSION = 1;
 
     private String mTableName;
-    private SQLiteDatabase mDatabase;
+    private android.database.sqlite.SQLiteDatabase mDatabase;
     private ProvideContentValues mProvider;
     private Class<? extends BaseCursorWrapper<D>> mWrapperClx;
 
@@ -37,11 +35,11 @@ public class Database<D extends Object, Helper extends SQLiteOpenHelper, Wrapper
      * @param provider         一个ContentValues的provider，对一个Data转化为ContentValues
      * @return
      */
-    public static Database init(SQLiteOpenHelper SQLiteOpenHelper, ProvideContentValues provider, Class<? extends BaseCursorWrapper> wrapperClx) {
-        return new Database(SQLiteOpenHelper, provider, wrapperClx);
+    public static SQLiteDatabase init(SQLiteOpenHelper SQLiteOpenHelper, ProvideContentValues provider, Class<? extends BaseCursorWrapper> wrapperClx) {
+        return new SQLiteDatabase(SQLiteOpenHelper, provider, wrapperClx);
     }
 
-    private Database(Helper helper, ProvideContentValues<D> provider, Class<? extends BaseCursorWrapper<D>> wrapperClx) {
+    private SQLiteDatabase(Helper helper, ProvideContentValues<D> provider, Class<? extends BaseCursorWrapper<D>> wrapperClx) {
         this.mDatabase = helper.getWritableDatabase();
         this.mTableName = helper.getDatabaseName();
         this.mProvider = provider;
