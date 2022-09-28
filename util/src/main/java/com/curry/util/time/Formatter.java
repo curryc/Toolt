@@ -30,4 +30,8 @@ public class Formatter {
     public static String getFileFormatString(Date date){
         return new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.ENGLISH).format(date);
     }
+
+    public static String getSimpleDateString(Date date){
+        return new SimpleDateFormat("yyyy/MM/dd EEE", Locale.ENGLISH).format(date);
+    }
 }

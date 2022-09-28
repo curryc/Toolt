@@ -3,12 +3,44 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/text_area_height"
-        android:id="@+id/background">
+        android:layout_height="@dimen/text_area_height">
+    <androidx.cardview.widget.CardView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/padding_gradient"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/background">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical">
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:text="title"
+                      android:textSize="@dimen/memorial_title_text_size"
+                      android:gravity="center"
+                      android:id="@+id/name"
+                      android:layout_weight="2"/>
+            <TextView android:layout_width="match_parent"
+                      android:layout_height="0dp"
+                      android:layout_weight="1"
+                      android:text="date"
+                      android:gravity="center"
+                      android:textSize="@dimen/memorial_des_text_size"
+                      android:id="@+id/date"
+                      android:background="@color/light_gray"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
     <com.curry.util.view.CornerLabel
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:label_width="12dp"
-            app:lean_right="true"
-            app:thickness="3dp"/>
+            android:layout_width="@dimen/memorial_label_size"
+            android:layout_height="@dimen/memorial_label_size"
+            android:layout_gravity="right"
+            android:id="@+id/label"
+            android:elevation="7dp"
+            app:fore_color="@color/red"
+            app:label_width="@dimen/memorial_label_width"
+            app:text="label"
+            app:lean_right="false"
+            app:verticalOffset="@dimen/padding_gradient"
+            app:horizontalOffset="@dimen/padding_gradient"/>
 </FrameLayout>

@@ -215,7 +215,6 @@ public class CompassView extends View {
      * @param angle
      */
     public void setDirection(float angle) {
-//        System.out.println(angle);
         angle = angle <= 0 ? angle < 0 ? -angle : 0 : 360 - angle;
         if (Math.abs(angle - direction) <= 0.7) return;
         this.direction = angle;

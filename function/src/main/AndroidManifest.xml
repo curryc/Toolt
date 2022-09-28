@@ -44,7 +44,10 @@
         <activity android:name=".device.compass.Compass"
                   android:exported="true"></activity>
 
-        <activity android:name=".image.bilibli.Bilibili"
+        <activity android:name=".image.bilibili.Bilibili"
+                  android:exported="true"></activity>
+
+        <activity android:name=".normal.memorial.MemorialDayActivity"
                   android:exported="true"></activity>
     </application>
 

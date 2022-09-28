@@ -1,4 +1,4 @@
-package com.curry.function.image.bilibli;
+package com.curry.function.image.bilibili;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestManager;
 import com.curry.function.App;
 import com.curry.function.R;
 import com.curry.function.base.BaseBackActivity;
@@ -19,12 +17,10 @@ import com.curry.util.image.ImageUtils;
 import com.curry.util.time.Formatter;
 import com.curry.util.web.Web;
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Logger;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Date;
 
 /**

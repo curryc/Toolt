@@ -5,9 +5,10 @@ import com.curry.function.bean.Function;
 import com.curry.function.calculate.calculator.ScientificCalculator;
 import com.curry.function.device.compass.Compass;
 import com.curry.function.device.sinaudio.SinAudio;
-import com.curry.function.image.bilibli.Bilibili;
+import com.curry.function.image.bilibili.Bilibili;
 import com.curry.function.image.stitch.Stitch;
 import com.curry.function.normal.handleberrage.HandleBarrage;
+import com.curry.function.normal.memorial.MemorialDayActivity;
 import com.curry.function.normal.ruler.Ruler;
 
 /**
@@ -45,6 +46,7 @@ public class Config {
             // 常用应用
             new Function(R.string.handle_barrage, 0, 0, HandleBarrage.class),
             new Function(R.string.ruler, 0, 1, Ruler.class),
+            new Function(R.string.memorial_day, 0, 1, MemorialDayActivity.class),
             // 查询应用
             // 计算应用
             new Function(R.string.calculator, 2, 0, ScientificCalculator.class),
